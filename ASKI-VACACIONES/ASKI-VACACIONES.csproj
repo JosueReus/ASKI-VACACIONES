@@ -38,17 +38,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -1101,6 +1102,51 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tbl_calendario.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_departamento.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_estatus.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_jerarquia.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_log_vacaciones.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_permisos.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_roles.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_tipo_dia.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_usuarios.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_vacaciones.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsys.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsys.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsys.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsys.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -1109,6 +1155,23 @@
     <Content Include="Views\Home\NuevaSolicitud.cshtml" />
     <Content Include="Views\Home\Administracion.cshtml" />
     <Content Include="Views\Home\MisSolicitudes.cshtml" />
+    <EntityDeploy Include="vsys.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>vsys.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="vsys.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vsys.edmx</DependentUpon>
+      <LastGenOutput>vsys.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="vsys.edmx.diagram">
+      <DependentUpon>vsys.edmx</DependentUpon>
+    </Content>
+    <Content Include="vsys.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vsys.edmx</DependentUpon>
+      <LastGenOutput>vsys.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1119,6 +1182,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
