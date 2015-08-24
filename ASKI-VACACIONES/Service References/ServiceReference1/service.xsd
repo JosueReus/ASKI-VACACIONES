@@ -29,4 +29,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="addDepartamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iD" type="xs:int" />
+        <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="status" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -89,6 +89,12 @@ namespace ASKI_VACACIONES.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<ASKI_VACACIONES.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ASKI_VACACIONES.ServiceReference1.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDepartamento", ReplyAction="http://tempuri.org/IService1/addDepartamentoResponse")]
+        void addDepartamento(int iD, string descripcion, int status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDepartamento", ReplyAction="http://tempuri.org/IService1/addDepartamentoResponse")]
+        System.Threading.Tasks.Task addDepartamentoAsync(int iD, string descripcion, int status);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -132,6 +138,14 @@ namespace ASKI_VACACIONES.ServiceReference1 {
         
         public System.Threading.Tasks.Task<ASKI_VACACIONES.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ASKI_VACACIONES.ServiceReference1.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public void addDepartamento(int iD, string descripcion, int status) {
+            base.Channel.addDepartamento(iD, descripcion, status);
+        }
+        
+        public System.Threading.Tasks.Task addDepartamentoAsync(int iD, string descripcion, int status) {
+            return base.Channel.addDepartamentoAsync(iD, descripcion, status);
         }
     }
 }

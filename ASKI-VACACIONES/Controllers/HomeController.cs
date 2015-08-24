@@ -15,5 +15,7 @@ namespace ASKI_VACACIONES.Controllers
         public ViewResult Administracion() { return View(); }
         public ViewResult NuevaSolicitud() { return View(); }
         public ViewResult MisSolicitudes() { return View(); }
+
+       
     }
 }

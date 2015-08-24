@@ -18,6 +18,9 @@ namespace Service_Asky
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
+
+        [OperationContract]
+        void addDepartamento(int iD, string descripcion, int status);
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
