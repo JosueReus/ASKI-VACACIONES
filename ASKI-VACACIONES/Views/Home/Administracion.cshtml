@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ASKI_VACACIONES.Models.UserModel
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -356,7 +357,7 @@
                                 <small class="label pull-right bg-yellow">12</small>
                             </a>
                         </li>*@
-
+    </ul>
             </section>
             <!-- /.sidebar -->
         </aside>
@@ -588,12 +589,14 @@
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Administracion de Departamentos</a>
                                                 </h4>
                                             </div>
+
+                                            @using (Html.BeginForm()) { 
                                             <div id="collapseFour" class="panel-collapse collapse collapse">
                                                 <div class="panel-body">
 
                                                     <div class="box box-primary">
                                                         <div class="box-header with-border">
-                                                            <h3 class="box-title">Roles</h3>
+                                                            <h3 class="box-title">Departamentos</h3>
                                                         </div><!-- /.box-header -->
                                                         <!-- form start -->
                                                         <form class="form-horizontal">
@@ -601,13 +604,14 @@
                                                                 <div class="form-group">
                                                                     <label for="inputiddeptos" class="col-sm-2 control-label">Id Departamento</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputiddeptos" size="20">
+                                                                       <input type="text" class="form-control" id="inputiddeptos" size="20">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputdescripcion" size="20">
+                                                                       @Html.TextBoxFor(x => x.descripcion, new { @class="form-control", type = "text" });
+                                                                         <input type="text" class="form-control" id="inputdescripcion" size="20">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
@@ -619,7 +623,7 @@
 
                                                                         </select>
                                                                     </div>
-
+                                                                </div>
                                                                 </div><!-- /.box-body -->
                                                                 <div class="box-footer">
                                                                     <button type="submit" class="btn btn-info pull-right">Eliminar</button>
@@ -631,6 +635,7 @@
 
                                                 </div>
                                             </div>
+                                            }
                                         </div>
 
                                     </div>
@@ -645,6 +650,7 @@
                         <section class="col-lg-7 connectedSortable"></section><!-- /.Left col -->
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
                         <section class="col-lg-5 connectedSortable"></section><!-- right col -->
+                    </div>
                     </div><!-- /.row (main row) -->
             </section><!-- /.content -->
         </div><!-- /.content-wrapper -->
