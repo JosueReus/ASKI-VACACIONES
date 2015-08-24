@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASKI-VACACIONES", "ASKI-VACACIONES\ASKI-VACACIONES.csproj", "{5C1C17EA-043C-41B4-B81B-8E044E558B63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService1", "WcfService1\WcfService1.csproj", "{240BA62F-BCF3-482A-A5B2-41E756D3FD63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5C1C17EA-043C-41B4-B81B-8E044E558B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C1C17EA-043C-41B4-B81B-8E044E558B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C1C17EA-043C-41B4-B81B-8E044E558B63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{240BA62F-BCF3-482A-A5B2-41E756D3FD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{240BA62F-BCF3-482A-A5B2-41E756D3FD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{240BA62F-BCF3-482A-A5B2-41E756D3FD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{240BA62F-BCF3-482A-A5B2-41E756D3FD63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
