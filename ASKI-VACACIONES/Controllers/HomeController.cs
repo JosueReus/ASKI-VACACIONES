@@ -23,7 +23,7 @@ namespace ASKI_VACACIONES.Controllers
         {
 
             Service1Client client = new Service1Client();
-            client.addDepartamento(model.descripcion, model.estatus);
+            client.addDepartamentos(model.descripcion);
             client.Close();
             return View();
         }
