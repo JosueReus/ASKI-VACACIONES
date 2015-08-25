@@ -90,11 +90,17 @@ namespace ASKI_VACACIONES.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<ASKI_VACACIONES.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ASKI_VACACIONES.ServiceReference1.CompositeType composite);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDepartamento", ReplyAction="http://tempuri.org/IService1/addDepartamentoResponse")]
-        void addDepartamento(string descripcion, char status);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDepartamentos", ReplyAction="http://tempuri.org/IService1/addDepartamentosResponse")]
+        void addDepartamentos(string descripcion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDepartamento", ReplyAction="http://tempuri.org/IService1/addDepartamentoResponse")]
-        System.Threading.Tasks.Task addDepartamentoAsync(string descripcion, char status);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDepartamentos", ReplyAction="http://tempuri.org/IService1/addDepartamentosResponse")]
+        System.Threading.Tasks.Task addDepartamentosAsync(string descripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addRoles", ReplyAction="http://tempuri.org/IService1/addRolesResponse")]
+        void addRoles(string descripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addRoles", ReplyAction="http://tempuri.org/IService1/addRolesResponse")]
+        System.Threading.Tasks.Task addRolesAsync(string descripcion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -140,12 +146,20 @@ namespace ASKI_VACACIONES.ServiceReference1 {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public void addDepartamento(string descripcion, char status) {
-            base.Channel.addDepartamento(descripcion, status);
+        public void addDepartamentos(string descripcion) {
+            base.Channel.addDepartamentos(descripcion);
         }
         
-        public System.Threading.Tasks.Task addDepartamentoAsync(string descripcion, char status) {
-            return base.Channel.addDepartamentoAsync(descripcion, status);
+        public System.Threading.Tasks.Task addDepartamentosAsync(string descripcion) {
+            return base.Channel.addDepartamentosAsync(descripcion);
+        }
+        
+        public void addRoles(string descripcion) {
+            base.Channel.addRoles(descripcion);
+        }
+        
+        public System.Threading.Tasks.Task addRolesAsync(string descripcion) {
+            return base.Channel.addRolesAsync(descripcion);
         }
     }
 }

@@ -12,10 +12,13 @@ namespace ASKI_VACACIONES.Controllers
     {
         public ViewResult Administracion() { return View(); }
         // GET: Roles
-       //[HttpPost]
-        //public ViewResult Administracion(RolesModel model)
-        //{
-
-        //}
+       [HttpPost]
+        public ViewResult Administracion(RolesModel model)
+        {
+            Service1Client client = new Service1Client();
+            client.addRoles(model.descripcion);
+            return View();
+           
+        }
     }
 }

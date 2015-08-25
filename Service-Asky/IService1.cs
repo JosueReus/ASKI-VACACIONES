@@ -20,9 +20,9 @@ namespace Service_Asky
         // TODO: Add your service operations here
 
         [OperationContract]
-        void addDepartamento(string descripcion, char status);
+        void addDepartamentos(string descripcion);
         [OperationContract]
-        void addRoles(string descripcion, char status);
+        void addRoles(string descripcion);
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

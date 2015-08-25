@@ -15,7 +15,7 @@ namespace Service_Asky
             return string.Format("You entered: {0}", value);
         }
 
-        public void addDepartamentos(string descripcion, char status)
+        public void addDepartamentos(string descripcion)
         {
             vsystem_askiEntities db = new vsystem_askiEntities();
             tbl_departamento dep = new tbl_departamento();
@@ -25,7 +25,7 @@ namespace Service_Asky
             db.SaveChanges();
             
         }
-        public void addRoles(string descripcion, char status)
+        public void addRoles(string descripcion)
         {
             vsystem_askiEntities db = new vsystem_askiEntities();
             tbl_roles roles = new tbl_roles();
