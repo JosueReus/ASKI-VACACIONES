@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASKI-VACACIONES", "ASKI-VACACIONES\ASKI-VACACIONES.csproj", "{5C1C17EA-043C-41B4-B81B-8E044E558B63}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F7B83A7D-C451-47E3-8A6C-6547C91B19F6} = {F7B83A7D-C451-47E3-8A6C-6547C91B19F6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-Asky", "Service-Asky\Service-Asky.csproj", "{F7B83A7D-C451-47E3-8A6C-6547C91B19F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{5C1C17EA-043C-41B4-B81B-8E044E558B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C1C17EA-043C-41B4-B81B-8E044E558B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C1C17EA-043C-41B4-B81B-8E044E558B63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7B83A7D-C451-47E3-8A6C-6547C91B19F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B83A7D-C451-47E3-8A6C-6547C91B19F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B83A7D-C451-47E3-8A6C-6547C91B19F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B83A7D-C451-47E3-8A6C-6547C91B19F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

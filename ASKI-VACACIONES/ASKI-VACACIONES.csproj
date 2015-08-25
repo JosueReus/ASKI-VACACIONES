@@ -38,17 +38,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -96,6 +98,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Service References\ServiceReference1\ASKI_VACACIONES.ServiceReference1.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Template\bootstrap\css\bootstrap.css" />
     <Content Include="Template\bootstrap\css\bootstrap.min.css" />
     <Content Include="Template\bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -1087,6 +1098,13 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\login.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Template\tabs\css\reset.css" />
+    <Content Include="Template\tabs\css\style.css" />
+    <Content Include="Template\tabs\img\vicons.svg" />
+    <Content Include="Template\tabs\index.html" />
+    <Content Include="Template\tabs\js\jquery-2.1.1.js" />
+    <Content Include="Template\tabs\js\main.js" />
+    <Content Include="Template\tabs\js\modernizr.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -1097,10 +1115,63 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RolesModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_calendario.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_departamento.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_estatus.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_jerarquia.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_log_vacaciones.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_permisos.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_roles.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_tipo_dia.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_usuarios.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_vacaciones.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsys.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsys.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsys.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsys.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -1109,6 +1180,41 @@
     <Content Include="Views\Home\NuevaSolicitud.cshtml" />
     <Content Include="Views\Home\Administracion.cshtml" />
     <Content Include="Views\Home\MisSolicitudes.cshtml" />
+    <EntityDeploy Include="vsys.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>vsys.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="vsys.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vsys.edmx</DependentUpon>
+      <LastGenOutput>vsys.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="vsys.edmx.diagram">
+      <DependentUpon>vsys.edmx</DependentUpon>
+    </Content>
+    <Content Include="vsys.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vsys.edmx</DependentUpon>
+      <LastGenOutput>vsys.cs</LastGenOutput>
+    </Content>
+    <None Include="Service References\ServiceReference1\service.wsdl" />
+    <None Include="Service References\ServiceReference1\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service_Asky.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Template\tabs\.DS_Store" />
+    <Content Include="Template\tabs\img\Vicons License 1.0.pdf" />
+    <Content Include="Template\tabs\js\.DS_Store" />
+    <Content Include="Template\tabs\partials\_layout.scss" />
+    <Content Include="Template\tabs\partials\_mixins.scss" />
+    <Content Include="Template\tabs\partials\_variables.scss" />
+    <Content Include="Template\tabs\readme.pdf" />
+    <Content Include="Template\tabs\scss\style.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1118,7 +1224,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Roles\" />
+    <Folder Include="Views\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

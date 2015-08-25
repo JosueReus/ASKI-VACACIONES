@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ASKI_VACACIONES.Models;
+using ASKI_VACACIONES.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,5 +17,15 @@ namespace ASKI_VACACIONES.Controllers
         public ViewResult Administracion() { return View(); }
         public ViewResult NuevaSolicitud() { return View(); }
         public ViewResult MisSolicitudes() { return View(); }
+
+       [HttpPost]
+        public ActionResult Administracion(UserModel model)
+        {
+
+            Service1Client client = new Service1Client();
+            client.addDepartamentos(model.descripcion);
+            client.Close();
+            return View();
+        }
     }
 }

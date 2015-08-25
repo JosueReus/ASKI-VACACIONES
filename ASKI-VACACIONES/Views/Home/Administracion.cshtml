@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ASKI_VACACIONES.Models.UserModel
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -30,6 +31,11 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="~/Template/dist/css/skins/skin-red.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="~/Template/tabs/css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="~/Template/tabs/css/style.css"> <!-- Resource style -->
+    <script src="~/Template/tabs/js/modernizr.js"></script> <!-- Modernizr -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -356,7 +362,7 @@
                                 <small class="label pull-right bg-yellow">12</small>
                             </a>
                         </li>*@
-
+    </ul>
             </section>
             <!-- /.sidebar -->
         </aside>
@@ -388,98 +394,267 @@
                                 <div class="bs-example">
                                     <div class="panel-group" id="accordion">
                                         <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Administracion de usuarios</a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseOne" class="panel-collapse collapse collapse">
-                                                <div class="panel-body">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Administracion usuarios</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse collapse">
+                                            <div class="panel-body">
 
-                                                    <div class="box box-primary">
-                                                        <div class="box-header with-border">
-                                                            <h3 class="box-title">Usuarios</h3>
-                                                        </div>
-                                                        <!-- form start -->
-                                                        <form class="form-horizontal">
-                                                            <div class="box-body">
-                                                                <div class="form-group">
-                                                                    <label for="inputtalentohumano" class="col-sm-2 control-label">Talento humano</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputtalentohumano" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputprimernombre" class="col-sm-2 control-label">Primer nombre</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputprimernombre" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputsegundonombre" class="col-sm-2 control-label">Segundo nombre</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputsegundonombre" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputprimerapellido" class="col-sm-2 control-label">Primer apellido</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputprimerapellido" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputsegundoapellido" class="col-sm-2 control-label">Segundo apellido</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputsegundoapellido" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputemail" class="col-sm-2 control-label">Correo</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="email" class="form-control" id="inputemail" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="password" class="form-control" id="inputPassword3">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputfechaingreso" class="col-sm-2 control-label">Fecha Ingreso</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="date" class="form-control" id="inputfechaingreso">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputfechacreacion" class="col-sm-2 control-label">Fecha Creacion</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="date" class="form-control" id="inputfechacreacion">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputestado" class="col-sm-2 control-label">Estado</label>
-                                                                    <div class="col-sm-10">
-                                                                        <select class="form-control">
-                                                                            <option>Activo</option>
-                                                                            <option>No Activo</option>
+                                                <div class="box box-primary">
+                                                    <div class="box-header with-border">
+                                                        <h3 class="box-title">Usuarios</h3>
+                                                    </div><!-- /.box-header -->
+                                                    <!-- form start -->
+                                                    <form class="form-horizontal">
+                                                    
+                                                        <div class="cd-tabs">
+                                                            <nav>
+                                                                <ul class="cd-tabs-navigation">
+                                                                    <li><a data-content="inbox" class="selected" href="#0">Agregar</a></li>
+                                                                    <li><a data-content="new" href="#0">Modificar</a></li>
+                                                                    <li><a data-content="tash" href="#0">Eliminar</a></li>
+                                                                    
+                                                                </ul> <!-- cd-tabs-navigation -->
+                                                            </nav>
 
-                                                                        </select>
+                                                            <ul class="cd-tabs-content">
+                                                                <li data-content="inbox" class="selected">
+                                                                    <div class="box-body">
+                                                                                <div class="form-group">
+                                                                                    <label for="inputtalentohumano" class="col-sm-2 control-label">Talento humano</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="text" class="form-control" id="inputtalentohumano" size="20">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="inputprimernombre" class="col-sm-2 control-label">Primer nombre</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="text" class="form-control" id="inputprimernombre" size="20">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="inputsegundonombre" class="col-sm-2 control-label">Segundo nombre</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="text" class="form-control" id="inputsegundonombre" size="20">
+                                                                                    </div>
+                                                                                </div>  
+                                                                                <div class="form-group">
+                                                                                    <label for="inputprimerapellido" class="col-sm-2 control-label">Primer apellido</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="text" class="form-control" id="inputprimersegudno" size="20">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="inputsegundoapellido" class="col-sm-2 control-label">Segundo apellido</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="text" class="form-control" id="inputsegundonapellido" size="20">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="inputcorreo" class="col-sm-2 control-label">Correo</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="email" class="form-control" id="inputcorreo" size="20">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="inputpass" class="col-sm-2 control-label">Contraseña</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="password" class="form-control" id="inputpass" size="20">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="inputcpass" class="col-sm-2 control-label">Confirmar contraseña</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="password" class="form-control" id="inputcpass" size="20">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="inputfecha" class="col-sm-2 control-label">Fecha ingreso</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="date" class="form-control" id="inputfecha" size="10">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <select class="form-control" disabled>
+                                                                                            <option>Activo</option>
+                                                                                            <option>No Activo</option>
+
+                                                                                        </select>
+                                                                                    </div>
+
+                                                                                </div><!-- /.box-body -->
+                                                                                <div class="box-footer">
+                                                     
+                                                                                    <button type="submit" class="btn btn-info pull-right">Agregar</button>
+                                                                                </div><!-- /.box-footer -->
+                                                                            </div>
+                                                                
+                                                                 </li>
+
+                                                                <li data-content="new">
+                                                                    <div class="box-body">
+                                                                        <div class="form-group">
+                                                                            <label for="inputtalentohumano" class="col-sm-2 control-label">Talento humano</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputtalentohumano" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputprimernombre" class="col-sm-2 control-label">Primer nombre</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputprimernombre" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputsegundonombre" class="col-sm-2 control-label">Segundo nombre</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputsegundonombre" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputprimerapellido" class="col-sm-2 control-label">Primer apellido</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputprimersegudno" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputsegundoapellido" class="col-sm-2 control-label">Segundo apellido</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputsegundonapellido" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputcorreo" class="col-sm-2 control-label">Correo</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="email" class="form-control" id="inputcorreo" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputpass" class="col-sm-2 control-label">Contraseña</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="password" class="form-control" id="inputpass" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputcpass" class="col-sm-2 control-label">Confirmar contraseña</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="password" class="form-control" id="inputcpass" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputfecha" class="col-sm-2 control-label">Fecha ingreso</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="date" class="form-control" id="inputfecha" size="10">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                            <div class="col-sm-10">
+                                                                                <select class="form-control" >
+                                                                                    <option>Activo</option>
+                                                                                    <option>No Activo</option>
+
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div><!-- /.box-body -->
+                                                                        <div class="box-footer">
+
+                                                                            <button type="submit" class="btn btn-info pull-right">Modificar</button>
+                                                                        </div><!-- /.box-footer -->
                                                                     </div>
+                                                                
+                                                                </li>
 
-                                                                </div><!-- /.box-body -->
-                                                                <div class="box-footer">
-                                                                    <button type="submit" class="btn btn-info pull-right">Eliminar</button>
-                                                                    <button type="submit" class="btn btn-info pull-right">Modificar</button>
-                                                                    <button type="submit" class="btn btn-info pull-right">Agregar</button>
-                                                                </div><!-- /.box-footer -->
-                                                            </div>
-                                                        </form>
-                                                    </div><!-- /.box -->
+                                                                <li data-content="tash">
+                                                                    <div class="box-body">
+                                                                        <div class="form-group">
+                                                                            <label for="inputtalentohumano" class="col-sm-2 control-label">Talento humano</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputtalentohumano" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputprimernombre" class="col-sm-2 control-label">Primer nombre</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputprimernombre" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputsegundonombre" class="col-sm-2 control-label">Segundo nombre</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputsegundonombre" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputprimerapellido" class="col-sm-2 control-label">Primer apellido</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputprimersegudno" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputsegundoapellido" class="col-sm-2 control-label">Segundo apellido</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="inputsegundonapellido" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputcorreo" class="col-sm-2 control-label">Correo</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="email" class="form-control" id="inputcorreo" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputpass" class="col-sm-2 control-label">Contraseña</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="password" class="form-control" id="inputpass" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputcpass" class="col-sm-2 control-label">Confirmar contraseña</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="password" class="form-control" id="inputcpass" size="20">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputfecha" class="col-sm-2 control-label">Fecha ingreso</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="date" class="form-control" id="inputfecha" size="10">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                            <div class="col-sm-10">
+                                                                                <select class="form-control" >
+                                                                                    <option>Activo</option>
+                                                                                    <option>No Activo</option>
 
-                                                </div>
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div><!-- /.box-body -->
+                                                                        <div class="box-footer">
+
+                                                                            <button type="submit" class="btn btn-info pull-right">Eliminar</button>
+                                                                        </div><!-- /.box-footer -->
+                                                                    </div>   
+                                                                
+                                                                 </li>
+
+                                                               
+                                                            </ul> <!-- cd-tabs-content -->
+                                                        </div> <!-- cd-tabs -->
+                                                        
+                                                    </form>
+                                                </div><!-- /.box -->
+
                                             </div>
                                         </div>
+                                    </div>
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
@@ -495,36 +670,122 @@
                                                         </div><!-- /.box-header -->
                                                         <!-- form start -->
                                                         <form class="form-horizontal">
-                                                            <div class="box-body">
-                                                                <div class="form-group">
-                                                                    <label for="inputidroles" class="col-sm-2 control-label">Id Roles</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputidroles" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputprimernombre" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputestado" class="col-sm-2 control-label">Estado</label>
-                                                                    <div class="col-sm-10">
-                                                                        <select class="form-control">
-                                                                            <option>Activo</option>
-                                                                            <option>No Activo</option>
 
-                                                                        </select>
-                                                                    </div>
+                                                            <div class="cd-tabs">
+                                                                <nav>
+                                                                    <ul class="cd-tabs-navigation">
+                                                                        <li><a data-content="inbox" class="selected" href="#0">Agregar</a></li>
+                                                                        <li><a data-content="new" href="#0">Modificar</a></li>
+                                                                        <li><a data-content="tash" href="#0">Eliminar</a></li>
 
-                                                                </div><!-- /.box-body -->
-                                                                <div class="box-footer">
-                                                                    <button type="submit" class="btn btn-info pull-right">Eliminar</button>
-                                                                    <button type="submit" class="btn btn-info pull-right">Modificar</button>
-                                                                    <button type="submit" class="btn btn-info pull-right">Agregar</button>
-                                                                </div><!-- /.box-footer -->
-                                                            </div>
+                                                                    </ul> <!-- cd-tabs-navigation -->
+                                                                </nav>
+
+                                                                <ul class="cd-tabs-content">
+                                                                    <li data-content="inbox" class="selected">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="inputidroles" class="col-sm-2 control-label">Id Roles</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputidroles" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputprimernombre" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control" disabled>
+                                                                                        <option>Activo</option>
+                                                                                        <option>No Activo</option>
+
+                                                                                    </select>
+                                                                                </div>
+
+                                                                            </div><!-- /.box-body -->
+                                                                            <div class="box-footer">
+
+                                                                                <button type="submit" class="btn btn-info pull-right">Agregar</button>
+                                                                            </div><!-- /.box-footer -->
+                                                                        </div>
+
+                                                                    </li>
+
+                                                                    <li data-content="new">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="inputidroles" class="col-sm-2 control-label">Id Roles</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputidroles" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputprimernombre" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control">
+                                                                                        <option>Activo</option>
+                                                                                        <option>No Activo</option>
+
+                                                                                    </select>
+                                                                                </div>
+
+                                                                            </div><!-- /.box-body -->
+                                                                            <div class="box-footer">
+
+                                                                                <button type="submit" class="btn btn-info pull-right">Modificar</button>
+                                                                            </div><!-- /.box-footer -->
+                                                                        </div>
+                                                                    
+                                                                    
+                                                                     </li>
+
+                                                                    <li data-content="tash">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="inputidroles" class="col-sm-2 control-label">Id Roles</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputidroles" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputprimernombre" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control">
+                                                                                        <option>Activo</option>
+                                                                                        <option>No Activo</option>
+
+                                                                                    </select>
+                                                                                </div>
+
+                                                                            </div><!-- /.box-body -->
+                                                                            <div class="box-footer">
+
+                                                                                <button type="submit" class="btn btn-info pull-right">Eliminar</button>
+                                                                            </div><!-- /.box-footer -->
+                                                                        </div>
+                                                                    
+                                                                     </li>
+
+
+                                                                </ul> <!-- cd-tabs-content -->
+                                                            </div> <!-- cd-tabs -->
+
                                                         </form>
                                                     </div><!-- /.box -->
 
@@ -546,36 +807,120 @@
                                                         </div><!-- /.box-header -->
                                                         <!-- form start -->
                                                         <form class="form-horizontal">
-                                                            <div class="box-body">
-                                                                <div class="form-group">
-                                                                    <label for="inputidpermisos" class="col-sm-2 control-label">Id Permisos</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputidpermisos" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputprimernombre" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputestado" class="col-sm-2 control-label">Estado</label>
-                                                                    <div class="col-sm-10">
-                                                                        <select class="form-control">
-                                                                            <option>Activo</option>
-                                                                            <option>No Activo</option>
+                                                            <div class="cd-tabs">
+                                                                <nav>
+                                                                    <ul class="cd-tabs-navigation">
+                                                                        <li><a data-content="inbox" class="selected" href="#0">Agregar</a></li>
+                                                                        <li><a data-content="new" href="#0">Modificar</a></li>
+                                                                        <li><a data-content="tash" href="#0">Eliminar</a></li>
 
-                                                                        </select>
-                                                                    </div>
+                                                                    </ul> <!-- cd-tabs-navigation -->
+                                                                </nav>
 
-                                                                </div><!-- /.box-body -->
-                                                                <div class="box-footer">
-                                                                    <button type="submit" class="btn btn-info pull-right">Eliminar</button>
-                                                                    <button type="submit" class="btn btn-info pull-right">Modificar</button>
-                                                                    <button type="submit" class="btn btn-info pull-right">Agregar</button>
-                                                                </div><!-- /.box-footer -->
-                                                            </div>
+                                                                <ul class="cd-tabs-content">
+                                                                    <li data-content="inbox" class="selected">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="inputidpermisos" class="col-sm-2 control-label">Id permisos</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputidroles" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputdescripcion" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control" disabled>
+                                                                                        <option>Activo</option>
+                                                                                        <option>No Activo</option>
+
+                                                                                    </select>
+                                                                                </div>
+
+                                                                            </div><!-- /.box-body -->
+                                                                            <div class="box-footer">
+
+                                                                                <button type="submit" class="btn btn-info pull-right">Agregar</button>
+                                                                            </div><!-- /.box-footer -->
+                                                                        </div>
+
+                                                                    </li>
+
+                                                                    <li data-content="new">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="inputpermisos" class="col-sm-2 control-label">Id permisos</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputidpermisos" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputprimernombre" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control">
+                                                                                        <option>Activo</option>
+                                                                                        <option>No Activo</option>
+
+                                                                                    </select>
+                                                                                </div>
+
+                                                                            </div><!-- /.box-body -->
+                                                                            <div class="box-footer">
+
+                                                                                <button type="submit" class="btn btn-info pull-right">Modificar</button>
+                                                                            </div><!-- /.box-footer -->
+                                                                        </div>
+
+
+                                                                    </li>
+
+                                                                    <li data-content="tash">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="inputidpermisos" class="col-sm-2 control-label">Id permiso</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputidroles" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputdescripcion" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control">
+                                                                                        <option>Activo</option>
+                                                                                        <option>No Activo</option>
+
+                                                                                    </select>
+                                                                                </div>
+
+                                                                            </div><!-- /.box-body -->
+                                                                            <div class="box-footer">
+
+                                                                                <button type="submit" class="btn btn-info pull-right">Eliminar</button>
+                                                                            </div><!-- /.box-footer -->
+                                                                        </div>
+
+                                                                    </li>
+
+
+                                                                </ul> <!-- cd-tabs-content -->
+                                                            </div> <!-- cd-tabs -->
                                                         </form>
                                                     </div><!-- /.box -->
 
@@ -588,49 +933,138 @@
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Administracion de Departamentos</a>
                                                 </h4>
                                             </div>
+
+                                            @using (Html.BeginForm()) { 
                                             <div id="collapseFour" class="panel-collapse collapse collapse">
                                                 <div class="panel-body">
 
                                                     <div class="box box-primary">
                                                         <div class="box-header with-border">
-                                                            <h3 class="box-title">Roles</h3>
+                                                            <h3 class="box-title">Departamentos</h3>
                                                         </div><!-- /.box-header -->
                                                         <!-- form start -->
                                                         <form class="form-horizontal">
-                                                            <div class="box-body">
-                                                                <div class="form-group">
-                                                                    <label for="inputiddeptos" class="col-sm-2 control-label">Id Departamento</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputiddeptos" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="inputdescripcion" size="20">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="inputestado" class="col-sm-2 control-label">Estado</label>
-                                                                    <div class="col-sm-10">
-                                                                        <select class="form-control">
-                                                                            <option>Activo</option>
-                                                                            <option>No Activo</option>
+                                                            <div class="cd-tabs">
+                                                                <nav>
+                                                                    <ul class="cd-tabs-navigation">
+                                                                        <li><a data-content="inbox" class="selected" href="#0">Agregar</a></li>
+                                                                        <li><a data-content="new" href="#0">Modificar</a></li>
+                                                                        <li><a data-content="tash" href="#0">Eliminar</a></li>
 
-                                                                        </select>
-                                                                    </div>
+                                                                    </ul> <!-- cd-tabs-navigation -->
+                                                                </nav>
 
-                                                                </div><!-- /.box-body -->
-                                                                <div class="box-footer">
-                                                                    <button type="submit" class="btn btn-info pull-right">Eliminar</button>
-                                                                    <button type="submit" class="btn btn-info pull-right">Modificar</button>
-                                                                    <button type="submit" class="btn btn-info pull-right">Agregar</button>
-                                                                </div><!-- /.box-footer -->
+                                                                <ul class="cd-tabs-content">
+                                                                    <li data-content="inbox" class="selected">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="inputiddepto" class="col-sm-2 control-label">Id departamento</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputiddepto" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
+                                                                                <div class="col-sm-10">
+                                                                                    @Html.TextBoxFor(x => x.descripcion, new { @class = "form-control", type = "text" })
+                                                                                    @*<input type="text" class="form-control" id="inputdescripcion" size="20">*@
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control" disabled>
+                                                                                        <option>Activo</option>
+                                                                                        <option>No Activo</option>
+
+                                                                                    </select>
+                                                                                </div>
+
+                                                                            </div><!-- /.box-body -->
+                                                                            <div class="box-footer">
+
+                                                                                <button type="submit" class="btn btn-info pull-right">Agregar</button>
+                                                                            </div><!-- /.box-footer -->
+                                                                        </div>
+
+                                                                    </li>
+
+                                                                    <li data-content="new">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="inputdepto" class="col-sm-2 control-label">Id departamento</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputidpermisos" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputdescripcion" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control">
+                                                                                        <option>Activo</option>
+                                                                                        <option>No Activo</option>
+
+                                                                                    </select>
+                                                                                </div>
+
+                                                                            </div><!-- /.box-body -->
+                                                                            <div class="box-footer">
+
+                                                                                <button type="submit" class="btn btn-info pull-right">Modificar</button>
+                                                                            </div><!-- /.box-footer -->
+                                                                        </div>
+
+
+                                                                    </li>
+
+                                                                    <li data-content="tash">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="inputiddepartamento" class="col-sm-2 control-label">Id departaemnto</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputiddepartamento" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputdescripcion" class="col-sm-2 control-label">Descripcion</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input type="text" class="form-control" id="inputdescripcion" size="20">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="inputestado" class="col-sm-2 control-label">Estado</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control">
+                                                                                        <option>Activo</option>
+                                                                                        <option>No Activo</option>
+
+                                                                                    </select>
+                                                                                </div>
+
+                                                                            </div><!-- /.box-body -->
+                                                                            <div class="box-footer">
+
+                                                                                <button type="submit" class="btn btn-info pull-right">Eliminar</button>
+                                                                            </div><!-- /.box-footer -->
+                                                                        </div>
+
+                                                                    </li>
+
+
+                                                                </ul> <!-- cd-tabs-content -->
+                                                            </div> <!-- cd-tabs -->
                                                         </form>
                                                     </div><!-- /.box -->
 
                                                 </div>
                                             </div>
+                                            }
                                         </div>
 
                                     </div>
@@ -645,6 +1079,7 @@
                         <section class="col-lg-7 connectedSortable"></section><!-- /.Left col -->
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
                         <section class="col-lg-5 connectedSortable"></section><!-- right col -->
+                    </div>
                     </div><!-- /.row (main row) -->
             </section><!-- /.content -->
         </div><!-- /.content-wrapper -->
@@ -666,5 +1101,7 @@
     <script src="~/Template/dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/Template/dist/js/demo.js"></script>
+    <script src="~/Template/tabs/js/jquery-2.1.1.js"></script>
+    <script src="~/Template/tabs/js/main.js"></script> 
 </body>
 </html>
