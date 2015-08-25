@@ -15,7 +15,7 @@ namespace Service_Asky
             return string.Format("You entered: {0}", value);
         }
 
-        public void addDepartamento(string descripcion, char status)
+        public void addDepartamentos(string descripcion, char status)
         {
             vsystem_askiEntities db = new vsystem_askiEntities();
             tbl_departamento dep = new tbl_departamento();
@@ -24,6 +24,16 @@ namespace Service_Asky
             db.tbl_departamento.Add(dep);
             db.SaveChanges();
             
+        }
+        public void addRoles(string descripcion, char status)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            tbl_roles roles = new tbl_roles();
+            roles.descripcion = descripcion;
+            roles.activo = true;
+            db.tbl_roles.Add(roles);
+            db.SaveChanges();
+
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)

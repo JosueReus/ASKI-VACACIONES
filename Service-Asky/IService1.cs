@@ -21,6 +21,8 @@ namespace Service_Asky
 
         [OperationContract]
         void addDepartamento(string descripcion, char status);
+        [OperationContract]
+        void addRoles(string descripcion, char status);
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

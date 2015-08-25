@@ -1098,6 +1098,13 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\login.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Template\tabs\css\reset.css" />
+    <Content Include="Template\tabs\css\style.css" />
+    <Content Include="Template\tabs\img\vicons.svg" />
+    <Content Include="Template\tabs\index.html" />
+    <Content Include="Template\tabs\js\jquery-2.1.1.js" />
+    <Content Include="Template\tabs\js\main.js" />
+    <Content Include="Template\tabs\js\modernizr.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -1108,9 +1115,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RolesModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
@@ -1198,6 +1207,14 @@
     <None Include="Service References\ServiceReference1\Service_Asky.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Template\tabs\.DS_Store" />
+    <Content Include="Template\tabs\img\Vicons License 1.0.pdf" />
+    <Content Include="Template\tabs\js\.DS_Store" />
+    <Content Include="Template\tabs\partials\_layout.scss" />
+    <Content Include="Template\tabs\partials\_mixins.scss" />
+    <Content Include="Template\tabs\partials\_variables.scss" />
+    <Content Include="Template\tabs\readme.pdf" />
+    <Content Include="Template\tabs\scss\style.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1207,6 +1224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Roles\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
