@@ -8,6 +8,6 @@ namespace ASKI_VACACIONES.Models
     public class RolesModel
     {
         public string descripcion { get; set; }
-        public char estatus { get; set; }
+       
     }
 }

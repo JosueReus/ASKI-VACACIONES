@@ -14,18 +14,9 @@ namespace ASKI_VACACIONES.Controllers
         public ActionResult Login(){return View();}
         public ViewResult MenuPrincipal() { return View(); }
         public ViewResult Calendario() { return View(); }
-        public ViewResult Administracion() { return View(); }
+       
         public ViewResult NuevaSolicitud() { return View(); }
         public ViewResult MisSolicitudes() { return View(); }
-
-       [HttpPost]
-        public ActionResult Administracion(UserModel model)
-        {
-
-            Service1Client client = new Service1Client();
-            client.addDepartamentos(model.descripcion);
-            client.Close();
-            return View();
-        }
+               
     }
 }
