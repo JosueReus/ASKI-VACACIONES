@@ -8,6 +8,7 @@ namespace ASKI_VACACIONES.Models
     public class DepartamentoModel
     {
         public string descripcion { get; set; }
+        public int id { get; set; }
 
     }
 }

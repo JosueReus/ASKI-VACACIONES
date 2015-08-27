@@ -1,13 +1,13 @@
-﻿@model  ASKI_VACACIONES.Models.DepartamentoModel
+﻿@model  ASKI_VACACIONES.Models.UsuariosModel
 
 <section class="content-header">
     <h1>
-        Departamentos
+        Usuarios
 
     </h1>
     <ol class="breadcrumb">
         <li><a href="~/Home/Calendario"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Departamentos</li>
+        <li class="active">Usuarios</li>
     </ol>
 </section>
 
@@ -30,27 +30,27 @@
                                 <div class="cd-tabs">
                                     <nav>
                                         <ul class="cd-tabs-navigation">
-                                            <li><a data-content="inbox" href="~/Departamentos/Index">Agregar</a></li>
-                                            <li><a data-content="new" href="~/Departamentos/Edit">Modificar</a></li>
-                                            <li><a data-content="tash" class="selected">Eliminar</a></li>
+                                            <li><a data-content="inbox" href="~/Usuarios/Index">Agregar</a></li>
+                                            <li><a data-content="new" class="selected">Modificar</a></li>
+                                            <li><a data-content="tash" href="~/Usuarios/Delete">Eliminar</a></li>
                                         </ul> <!-- cd-tabs-navigation -->
                                     </nav>
                                     <ul class="cd-tabs-content">
                                         <li data-content="new" class="selected">
                                             <div class="box-body">
+
                                                 <div class="form-group">
-                                                    <label for="inputiddepartamento" class="col-sm-2 control-label">Id departamento</label>
+                                                    <label for="inputtalentohumano" class="col-sm-2 control-label">Talento humano</label>
                                                     <div class="col-sm-10">
-                                                        <p> <input type="text" class="form-control" id="inputiddepartamento" size="20"></p>
+                                                        <input type="text" class="form-control" id="inputtalentohumano" size="20">
                                                     </div>
                                                 </div>
+                                                
+                                                    <div class="box-footer">
+                                                        <button type="submit" class="btn btn-info pull-right">Eliminar</button>
+                                                    </div><!-- /.box-footer -->
 
 
-
-                                                <div class="box-footer">
-                                                    <button type="submit" class="btn btn-info pull-right">Eliminar</button>
-                                                </div><!-- /.box-footer -->
-                                            </div>
                                         </li>
                                     </ul> <!-- cd-tabs-content -->
                                 </div> <!-- cd-tabs -->
@@ -70,5 +70,4 @@
     <section class="col-lg-5 connectedSortable"></section><!-- right col -->
 
 
-</section><!-- /.content -->
-
+</section><!-- /.content -->          

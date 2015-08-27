@@ -981,6 +981,20 @@
     <Content Include="Template\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Template\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="Template\starter.html" />
+    <Content Include="Template\tabs\css\reset.css" />
+    <Content Include="Template\tabs\css\style.css" />
+    <Content Include="Template\tabs\img\vicons.svg" />
+    <Content Include="Template\tabs\index.html" />
+    <Content Include="Template\tabs\js\jquery-2.1.1.js" />
+    <Content Include="Template\tabs\js\main.js" />
+    <Content Include="Template\tabs\js\modernizr.js" />
+    <Content Include="Template\tabs\tabs\css\reset.css" />
+    <Content Include="Template\tabs\tabs\css\style.css" />
+    <Content Include="Template\tabs\tabs\img\vicons.svg" />
+    <Content Include="Template\tabs\tabs\index.html" />
+    <Content Include="Template\tabs\tabs\js\jquery-2.1.1.js" />
+    <Content Include="Template\tabs\tabs\js\main.js" />
+    <Content Include="Template\tabs\tabs\js\modernizr.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -991,12 +1005,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DepartamentosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PermisosController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DepartamentoModel.cs" />
+    <Compile Include="Models\PermisosModel.cs" />
     <Compile Include="Models\RolesModel.cs" />
+    <Compile Include="Models\UsuariosModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -1201,11 +1219,31 @@
     <Content Include="Views\Home\Ayuda.cshtml" />
     <Content Include="Views\Home\Calendario.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Template\tabs\.DS_Store" />
+    <Content Include="Template\tabs\img\Vicons License 1.0.pdf" />
+    <Content Include="Template\tabs\js\.DS_Store" />
+    <Content Include="Template\tabs\partials\_layout.scss" />
+    <Content Include="Template\tabs\partials\_mixins.scss" />
+    <Content Include="Template\tabs\partials\_variables.scss" />
+    <Content Include="Template\tabs\readme.pdf" />
+    <Content Include="Template\tabs\scss\style.scss" />
+    <Content Include="Template\tabs\tabs\img\Vicons License 1.0.pdf" />
+    <Content Include="Template\tabs\tabs\partials\_layout.scss" />
+    <Content Include="Template\tabs\tabs\partials\_mixins.scss" />
+    <Content Include="Template\tabs\tabs\partials\_variables.scss" />
+    <Content Include="Template\tabs\tabs\readme.pdf" />
+    <Content Include="Template\tabs\tabs\scss\style.scss" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Delete.cshtml" />
     <Content Include="Views\Departamentos\Index.cshtml" />
     <Content Include="Views\Departamentos\Edit.cshtml" />
     <Content Include="Views\Departamentos\Delete.cshtml" />
+    <Content Include="Views\Permisos\Index.cshtml" />
+    <Content Include="Views\Permisos\Edit.cshtml" />
+    <Content Include="Views\Permisos\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

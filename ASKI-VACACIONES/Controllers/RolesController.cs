@@ -11,15 +11,15 @@ namespace ASKI_VACACIONES.Controllers
         // GET: Roles
         public ActionResult Index()
         {
-            return PartialView();
+            return View();
         }
         public ActionResult Edit()
         {
-            return PartialView();
+            return View();
         }
         public ActionResult Delete()
         {
-            return PartialView();
+            return View();
         }
 
     }

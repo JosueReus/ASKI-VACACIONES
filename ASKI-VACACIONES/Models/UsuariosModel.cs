@@ -5,9 +5,7 @@ using System.Web;
 
 namespace ASKI_VACACIONES.Models
 {
-    public class RolesModel
+    public class UsuariosModel
     {
-        public string descripcion { get; set; }
-        public int id { get; set; }
     }
 }
