@@ -42,43 +42,44 @@
                                                 <div class="form-group">
                                                     <label for="inputtalentohumano" class="col-sm-2 control-label">Talento humano</label>
                                                     <div class="col-sm-10">
-                                                        <p><input type="text" class="form-control" id="inputtalentohumano" size="20"></p>
+                                                        <p>@Html.TextBoxFor(x=>x.talento_humano,new{@class= "form-control",type="text"})</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="inputprimernombre" class="col-sm-2 control-label">Primer nombre</label>
                                                     <div class="col-sm-10">
-                                                        <p><input type="text" class="form-control" id="inputprimernombre" size="20"></p>
+                                                        <p>@Html.TextBoxFor(x => x.primer_nombre, new { @class = "form-control", type = "text" })</p>
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="inputsegundonombre" class="col-sm-2 control-label">Segundo nombre</label>
                                                     <div class="col-sm-10">
-                                                       <p> <input type="text" class="form-control" id="inputsegundonombre" size="20"></p>
+                                                        <p>@Html.TextBoxFor(x => x.segundo_nombre, new { @class = "form-control", type = "text" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="inputprimerapellido" class="col-sm-2 control-label">Primer apellido</label>
                                                     <div class="col-sm-10">
-                                                       <p> <input type="text" class="form-control" id="inputprimersegudno" size="20"></p>
+                                                        <p>@Html.TextBoxFor(x => x.primer_apellido, new { @class = "form-control", type = "text" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="inputsegundoapellido" class="col-sm-2 control-label">Segundo apellido</label>
                                                     <div class="col-sm-10">
-                                                        <p><input type="text" class="form-control" id="inputsegundonapellido" size="20"></p>
+                                                        <p>@Html.TextBoxFor(x => x.segundo_apellido, new { @class = "form-control", type = "text" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="inputcorreo" class="col-sm-2 control-label">Correo</label>
                                                     <div class="col-sm-10">
-                                                        <p><input type="email" class="form-control" id="inputcorreo" size="20"></p>
+                                                        <p>@Html.TextBoxFor(x => x.email, new { @class = "form-control", type = "text" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="inputpass" class="col-sm-2 control-label">Contraseña</label>
                                                     <div class="col-sm-10">
-                                                        <p><input type="password" class="form-control" id="inputpass" size="20"></p>
+                                                        <p>@Html.TextBoxFor(x => x.password, new { @class = "form-control", type = "text" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -90,7 +91,7 @@
                                                 <div class="form-group">
                                                     <label for="inputfecha" class="col-sm-2 control-label">Fecha ingreso</label>
                                                     <div class="col-sm-10">
-                                                        <p><input type="date" class="form-control" id="inputfecha" size="10"></p>
+                                                        <p>@Html.TextBoxFor(x => x.fecha_ingreso, new { @class = "form-control", type = "text" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ASKI_VACACIONES.Models;
+using ASKI_VACACIONES.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +13,14 @@ namespace ASKI_VACACIONES.Controllers
         // GET: Usuarios
         public ActionResult Index()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Index(UsuariosModel model)
+        {
+            Service1Client client = new Service1Client();
+            client.addUsuario(model.talento_humano, model.email, model.primer_nombre,model.segundo_nombre,model.primer_apellido,model.segundo_apellido,model.fecha_ingreso,model.password);
+            client.Close();
             return View();
         }
         public ActionResult Edit()

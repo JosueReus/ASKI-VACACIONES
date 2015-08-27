@@ -53,4 +53,23 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="addUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="talento_humano" type="xs:int" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="primer_nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="segundo_nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="primer_apellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="segundo_apellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fecha_ingreso" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
