@@ -101,6 +101,12 @@ namespace ASKI_VACACIONES.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addRoles", ReplyAction="http://tempuri.org/IService1/addRolesResponse")]
         System.Threading.Tasks.Task addRolesAsync(string descripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addPermisos", ReplyAction="http://tempuri.org/IService1/addPermisosResponse")]
+        void addPermisos(string descripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addPermisos", ReplyAction="http://tempuri.org/IService1/addPermisosResponse")]
+        System.Threading.Tasks.Task addPermisosAsync(string descripcion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -160,6 +166,14 @@ namespace ASKI_VACACIONES.ServiceReference1 {
         
         public System.Threading.Tasks.Task addRolesAsync(string descripcion) {
             return base.Channel.addRolesAsync(descripcion);
+        }
+        
+        public void addPermisos(string descripcion) {
+            base.Channel.addPermisos(descripcion);
+        }
+        
+        public System.Threading.Tasks.Task addPermisosAsync(string descripcion) {
+            return base.Channel.addPermisosAsync(descripcion);
         }
     }
 }

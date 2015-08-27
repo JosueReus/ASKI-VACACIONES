@@ -31,6 +31,12 @@
   <wsdl:message name="IService1_addRoles_OutputMessage">
     <wsdl:part name="parameters" element="tns:addRolesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addPermisos_InputMessage">
+    <wsdl:part name="parameters" element="tns:addPermisos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addPermisos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addPermisosResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -47,6 +53,10 @@
     <wsdl:operation name="addRoles">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addRoles" message="tns:IService1_addRoles_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addRolesResponse" message="tns:IService1_addRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addPermisos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addPermisos" message="tns:IService1_addPermisos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addPermisosResponse" message="tns:IService1_addPermisos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -80,6 +90,15 @@
     </wsdl:operation>
     <wsdl:operation name="addRoles">
       <soap:operation soapAction="http://tempuri.org/IService1/addRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPermisos">
+      <soap:operation soapAction="http://tempuri.org/IService1/addPermisos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

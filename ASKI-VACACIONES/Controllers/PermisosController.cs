@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ASKI_VACACIONES.Models;
+using ASKI_VACACIONES.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,16 @@ namespace ASKI_VACACIONES.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Index(PermisosModel model)
+        {
+            Service1Client client = new Service1Client();
+            client.addPermisos(model.descripcion);
+            client.Close();
+            return View();
+        }
+
         public ActionResult Edit()
         {
             return View();

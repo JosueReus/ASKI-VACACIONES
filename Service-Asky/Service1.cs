@@ -36,6 +36,17 @@ namespace Service_Asky
 
         }
 
+        public void addPermisos(string descripcion)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            tbl_permisos permisos = new tbl_permisos();
+            permisos.descripcion = descripcion;
+            permisos.activo = true;
+            db.tbl_permisos.Add(permisos);
+            db.SaveChanges();
+
+        }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
