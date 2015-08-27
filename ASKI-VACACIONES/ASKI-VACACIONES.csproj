@@ -989,6 +989,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DepartamentosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1199,10 +1200,12 @@
     <Content Include="Views\Shared\Partial\Menu.cshtml" />
     <Content Include="Views\Home\Ayuda.cshtml" />
     <Content Include="Views\Home\Calendario.cshtml" />
-    <Content Include="Views\Roles\Agregar.cshtml" />
-    <Content Include="Views\Roles\Modificar.cshtml" />
-    <Content Include="Views\Roles\Eliminar.cshtml" />
-    <Content Include="Views\Home\Adminstracion.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Departamentos\Index.cshtml" />
+    <Content Include="Views\Departamentos\Edit.cshtml" />
+    <Content Include="Views\Departamentos\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

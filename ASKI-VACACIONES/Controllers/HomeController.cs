@@ -12,11 +12,9 @@ namespace ASKI_VACACIONES.Controllers
     {
         // GET: Home
         public ActionResult Login(){return View();}
-        public ViewResult MenuPrincipal() { return View(); }
         public ViewResult Calendario() { return View(); }
-        public ViewResult NuevaSolicitud() { return View(); }
-        public ViewResult MisSolicitudes() { return View(); }
-        public ViewResult Administracion(){return View(); }
+        public ViewResult Ayuda() { return View(); }
+     
 
         //[HttpPost]
         //public ActionResult Administracion(DepartamentoModel model)

@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace ASKI_VACACIONES.Controllers
 {
-    public class RolesController : Controller
+    public class DepartamentosController : Controller
     {
-        // GET: Roles
+        // GET: Departamentos
         public ActionResult Index()
         {
             return PartialView();
@@ -21,6 +21,5 @@ namespace ASKI_VACACIONES.Controllers
         {
             return PartialView();
         }
-
     }
 }
