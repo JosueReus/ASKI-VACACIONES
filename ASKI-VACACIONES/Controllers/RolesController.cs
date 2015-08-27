@@ -9,9 +9,19 @@ namespace ASKI_VACACIONES.Controllers
     public class RolesController : Controller
     {
         // GET: Roles
-        public ActionResult Index()
+        public ActionResult Agregar()
         {
-            return View();
+            return PartialView();
         }
+
+        public ActionResult Modificar()
+        {
+            return PartialView();
+        }
+        public ActionResult Eliminar()
+        {
+            return PartialView();
+        }
+
     }
 }

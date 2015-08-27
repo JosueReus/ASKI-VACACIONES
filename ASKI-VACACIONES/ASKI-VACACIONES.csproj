@@ -107,6 +107,42 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Login\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Login\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Login\bootstrap\css\bootstrap.css" />
+    <Content Include="Login\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Login\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Login\bootstrap\js\bootstrap.js" />
+    <Content Include="Login\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Login\bootstrap\js\npm.js" />
+    <Content Include="Login\css\bg.png" />
+    <Content Include="Login\css\styles.css" />
+    <Content Include="Login\images\bg.jpg" />
+    <Content Include="Login\images\bg1.jpg" />
+    <Content Include="Login\images\logo.png" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Login\images\logo_u.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Login\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Login\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Login\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Login\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Login\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Login\css\Documents - Shortcut.lnk" />
+    <Content Include="Login\images\Thumbs.db" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\login.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Template\bootstrap\css\bootstrap.css" />
     <Content Include="Template\bootstrap\css\bootstrap.min.css" />
     <Content Include="Template\bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -945,37 +981,103 @@
     <Content Include="Template\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Template\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="Template\starter.html" />
-    <Content Include="Login\bootstrap\css\bootstrap-theme.css" />
-    <Content Include="Login\bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="Login\bootstrap\css\bootstrap.css" />
-    <Content Include="Login\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Login\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Login\bootstrap\js\bootstrap.js" />
-    <Content Include="Login\bootstrap\js\bootstrap.min.js" />
-    <Content Include="Login\bootstrap\js\npm.js" />
-    <Content Include="Login\css\bg.png" />
-    <Content Include="Login\css\styles.css" />
-    <Content Include="Login\images\bg.jpg" />
-    <Content Include="Login\images\bg1.jpg" />
-    <Content Include="Login\images\logo.png" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\login.css" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\styles.css" />
-    <Content Include="Global.asax" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Login\images\logo_u.png" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Login\bootstrap\css\bootstrap-theme.css.map" />
-    <Content Include="Login\bootstrap\css\bootstrap.css.map" />
-    <Content Include="Login\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Login\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Login\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Login\css\Documents - Shortcut.lnk" />
-    <Content Include="Login\images\Thumbs.db" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartamentoModel.cs" />
+    <Compile Include="Models\RolesModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_calendario.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_departamento.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_estatus.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_jerarquia.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_log_vacaciones.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_permisos.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_roles.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_tipo_dia.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_usuarios.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_vacaciones.cs">
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsys.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsys.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsys.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsys.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <EntityDeploy Include="vsys.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>vsys.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="vsys.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vsys.edmx</DependentUpon>
+      <LastGenOutput>vsys.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="vsys.edmx.diagram">
+      <DependentUpon>vsys.edmx</DependentUpon>
+    </Content>
+    <Content Include="vsys.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vsys.edmx</DependentUpon>
+      <LastGenOutput>vsys.cs</LastGenOutput>
+    </Content>
+    <None Include="Service References\ServiceReference1\service.wsdl" />
+    <None Include="Service References\ServiceReference1\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service_Asky.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Template\.gitignore" />
     <Content Include="Template\.jshintrc" />
     <Content Include="Template\bootstrap\css\bootstrap.css.map" />
@@ -1093,129 +1195,14 @@
     <Content Include="Template\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Template\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="Template\README.md" />
-    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.4.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.js" />
-    <Content Include="Scripts\login.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Template\tabs\css\reset.css" />
-    <Content Include="Template\tabs\css\style.css" />
-    <Content Include="Template\tabs\img\vicons.svg" />
-    <Content Include="Template\tabs\index.html" />
-    <Content Include="Template\tabs\js\jquery-2.1.1.js" />
-    <Content Include="Template\tabs\js\main.js" />
-    <Content Include="Template\tabs\js\modernizr.js" />
-    <Content Include="Web.config" />
-    <Content Include="Scripts\jquery-2.1.4.min.map" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\MenuPrincipal.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdministracionController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RolesController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RolesModel.cs" />
-    <Compile Include="Models\DepartamentoModel.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\ServiceReference1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_calendario.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_departamento.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_estatus.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_jerarquia.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_log_vacaciones.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_permisos.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_roles.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_tipo_dia.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_usuarios.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_vacaciones.cs">
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vsys.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>vsys.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vsys.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>vsys.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vsys.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>vsys.edmx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\web.config" />
-    <Content Include="packages.config" />
+    <Content Include="Views\Shared\Partial\_Navbar.cshtml" />
+    <Content Include="Views\Shared\Partial\Menu.cshtml" />
+    <Content Include="Views\Home\Ayuda.cshtml" />
     <Content Include="Views\Home\Calendario.cshtml" />
-    <Content Include="Views\Home\NuevaSolicitud.cshtml" />
-    <Content Include="Views\Administracion\Administracion.cshtml" />
-    <Content Include="Views\Home\MisSolicitudes.cshtml" />
-    <EntityDeploy Include="vsys.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>vsys.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="vsys.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>vsys.edmx</DependentUpon>
-      <LastGenOutput>vsys.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="vsys.edmx.diagram">
-      <DependentUpon>vsys.edmx</DependentUpon>
-    </Content>
-    <Content Include="vsys.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>vsys.edmx</DependentUpon>
-      <LastGenOutput>vsys.cs</LastGenOutput>
-    </Content>
-    <None Include="Service References\ServiceReference1\service.wsdl" />
-    <None Include="Service References\ServiceReference1\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference1\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference1\Service_Asky.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Template\tabs\.DS_Store" />
-    <Content Include="Template\tabs\img\Vicons License 1.0.pdf" />
-    <Content Include="Template\tabs\js\.DS_Store" />
-    <Content Include="Template\tabs\partials\_layout.scss" />
-    <Content Include="Template\tabs\partials\_mixins.scss" />
-    <Content Include="Template\tabs\partials\_variables.scss" />
-    <Content Include="Template\tabs\readme.pdf" />
-    <Content Include="Template\tabs\scss\style.scss" />
+    <Content Include="Views\Roles\Agregar.cshtml" />
+    <Content Include="Views\Roles\Modificar.cshtml" />
+    <Content Include="Views\Roles\Eliminar.cshtml" />
+    <Content Include="Views\Home\Adminstracion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1225,8 +1212,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Roles\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
