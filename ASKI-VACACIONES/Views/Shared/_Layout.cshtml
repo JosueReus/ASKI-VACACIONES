@@ -1,11 +1,27 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script type="text/javascript">
+    function showContent() {
+        element = document.getElementById("content");
+        check = document.getElementById("check");
+        if (check.checked) {
+            element.style.display = 'block';
+        }
+        else {
+            element.style.display = 'none';
+        }
+    }
+    </script>
+ 
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sistema de vacaciones(UNITEC)</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/Template/plugins/datatables/dataTables.bootstrap.css">
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="~/Template/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -14,6 +30,8 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Template/dist/css/AdminLTE.min.css">
+    <!--datatable-->
+    <link rel="stylesheet" href="~/Template/datatables/css/style.css">
      <!--Tbs-->
     <link rel="stylesheet" href="~/Template/tabs/css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="~/Template/tabs/css/style.css"> <!-- Resource style -->
@@ -104,5 +122,21 @@
     <!--tabs-->
     @*<script src="~/Template/tabs/js/jquery-2.1.1.js"></script>*@
     <script src="~/Template/tabs/js/main.js"></script> <!-- Resource jQuery -->
+    <!-- DataTables -->
+    <script src="~/Template/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Template/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false
+        });
+    });
+    </script>
 </body>
 </html>
