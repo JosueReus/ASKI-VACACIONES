@@ -22,8 +22,8 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a9df8166-2ef5-4685-9ad3-2bfaf86c9def" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="0d790869-599e-4417-8ecc-bc6b477d3316" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="2b541510-7a42-4671-8ff0-e382e935c285" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="c8f158c0-290d-4780-aff2-57696ec0b29f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5ecc2bb6-7ba7-4b3e-b4e2-00ee79880587" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
     <MetadataFile FileName="Service_Asky.xsd" MetadataType="Schema" ID="ddb5f339-97cf-4045-ab13-ec9f5805fdac" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
   </Metadata>

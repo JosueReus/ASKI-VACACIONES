@@ -36,7 +36,6 @@ namespace Service_Asky
 
         }
 
-
          public void addUsuario(int talento_humano, string email, string primer_nombre, string segundo_nombre, string primer_apellido, string segundo_apellido, DateTime fecha_ingreso, string password)
         {
             vsystem_askiEntities db = new vsystem_askiEntities();
@@ -54,6 +53,18 @@ namespace Service_Asky
             db.tbl_usuarios.Add(usuario);
             db.SaveChanges();
         }
+
+        public void addPermisos(string descripcion)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            tbl_permisos permisos = new tbl_permisos();
+            permisos.descripcion = descripcion;
+            permisos.activo = true;
+            db.tbl_permisos.Add(permisos);
+            db.SaveChanges();
+
+        }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

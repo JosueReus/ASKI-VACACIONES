@@ -31,19 +31,17 @@
   <wsdl:message name="IService1_addRoles_OutputMessage">
     <wsdl:part name="parameters" element="tns:addRolesResponse" />
   </wsdl:message>
-<<<<<<< HEAD
   <wsdl:message name="IService1_addUsuario_InputMessage">
     <wsdl:part name="parameters" element="tns:addUsuario" />
   </wsdl:message>
   <wsdl:message name="IService1_addUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:addUsuarioResponse" />
-=======
+  </wsdl:message>
   <wsdl:message name="IService1_addPermisos_InputMessage">
     <wsdl:part name="parameters" element="tns:addPermisos" />
   </wsdl:message>
   <wsdl:message name="IService1_addPermisos_OutputMessage">
     <wsdl:part name="parameters" element="tns:addPermisosResponse" />
->>>>>>> WritingOnDataBaseJosue
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
@@ -62,15 +60,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addRoles" message="tns:IService1_addRoles_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addRolesResponse" message="tns:IService1_addRoles_OutputMessage" />
     </wsdl:operation>
-<<<<<<< HEAD
     <wsdl:operation name="addUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addUsuario" message="tns:IService1_addUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addUsuarioResponse" message="tns:IService1_addUsuario_OutputMessage" />
-=======
+    </wsdl:operation>
     <wsdl:operation name="addPermisos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addPermisos" message="tns:IService1_addPermisos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addPermisosResponse" message="tns:IService1_addPermisos_OutputMessage" />
->>>>>>> WritingOnDataBaseJosue
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -111,13 +107,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-<<<<<<< HEAD
     <wsdl:operation name="addUsuario">
       <soap:operation soapAction="http://tempuri.org/IService1/addUsuario" style="document" />
-=======
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="addPermisos">
       <soap:operation soapAction="http://tempuri.org/IService1/addPermisos" style="document" />
->>>>>>> WritingOnDataBaseJosue
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

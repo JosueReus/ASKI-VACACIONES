@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ASKI_VACACIONES.Models;
+using ASKI_VACACIONES.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +13,14 @@ namespace ASKI_VACACIONES.Controllers
         // GET: Departamentos
         public ActionResult Index()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Index(DepartamentoModel model)
+        {
+            Service1Client client = new Service1Client();
+            client.addDepartamentos(model.descripcion);
+            client.Close();
             return View();
         }
         public ActionResult Edit()
