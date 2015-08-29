@@ -149,11 +149,12 @@
     <Content Include="Template\bootstrap\js\bootstrap.js" />
     <Content Include="Template\bootstrap\js\bootstrap.min.js" />
     <Content Include="Template\bootstrap\js\npm.js" />
-    <Content Include="Template\datatables\css\style.css" />
-    <Content Include="Template\datatables\index.html" />
-    <Content Include="Template\datatables\js\index.js" />
-    <Content Include="Template\datatables\license.txt" />
-    <Content Include="Template\datatables\README.txt" />
+    <Content Include="Template\datatable\css\normalize.css" />
+    <Content Include="Template\datatable\css\style.css" />
+    <Content Include="Template\datatable\index.html" />
+    <Content Include="Template\datatable\js\index.js" />
+    <Content Include="Template\datatable\license.txt" />
+    <Content Include="Template\datatable\README.txt" />
     <Content Include="Template\dist\css\AdminLTE.css" />
     <Content Include="Template\dist\css\AdminLTE.min.css" />
     <Content Include="Template\dist\css\skins\skin-black-light.css" />

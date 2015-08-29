@@ -11,7 +11,7 @@ namespace ASKI_VACACIONES.Models
         public string descripcion { get; set; }
         [Required(ErrorMessage = "Escriba la descripcion")]
         public int id { get; set; }
-        [Required(ErrorMessage ="Escriba el id ")]
+       
 
     }
 }
