@@ -65,6 +65,12 @@ namespace Service_Asky
 
         }
 
+        public vsystem_askiEntities getDb()
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            return db;
+        }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

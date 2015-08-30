@@ -30,6 +30,9 @@ namespace Service_Asky
         [OperationContract]
         void addPermisos(string descripcion);
 
+        [OperationContract]
+        vsystem_askiEntities getDb();
+
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

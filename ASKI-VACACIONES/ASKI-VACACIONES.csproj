@@ -98,7 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Service References\ServiceReference1\ASKI_VACACIONES.ServiceReference1.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\ASKI_VACACIONES.ServiceReference1.vsystem_askiEntities.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
@@ -1018,6 +1023,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DepartamentoModel.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\PermisosModel.cs" />
     <Compile Include="Models\RolesModel.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
@@ -1098,6 +1104,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\service2.wsdl" />
+    <None Include="Service References\ServiceReference1\service3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\Service_Asky.xsd">
@@ -1250,6 +1260,9 @@
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Delete.cshtml" />
+    <None Include="Service References\ServiceReference1\System.Data.Entity.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

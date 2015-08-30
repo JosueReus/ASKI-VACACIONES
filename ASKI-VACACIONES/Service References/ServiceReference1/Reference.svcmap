@@ -22,10 +22,11 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="2b541510-7a42-4671-8ff0-e382e935c285" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
-    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="c8f158c0-290d-4780-aff2-57696ec0b29f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
+    <MetadataFile FileName="service2.wsdl" MetadataType="Wsdl" ID="cbfb756e-b2b1-401f-ad21-14a3a0a827e0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
+    <MetadataFile FileName="service3.xsd" MetadataType="Schema" ID="1be228d3-02d1-40b0-920e-57d53f3f8cec" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5ecc2bb6-7ba7-4b3e-b4e2-00ee79880587" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
     <MetadataFile FileName="Service_Asky.xsd" MetadataType="Schema" ID="ddb5f339-97cf-4045-ab13-ec9f5805fdac" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
+    <MetadataFile FileName="System.Data.Entity.xsd" MetadataType="Schema" ID="87d7d4f2-b9bf-4402-852c-a05943b85951" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Service_Asky/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

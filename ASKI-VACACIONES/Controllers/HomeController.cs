@@ -15,16 +15,38 @@ namespace ASKI_VACACIONES.Controllers
         public ViewResult Calendario() { return View(); }
         public ViewResult Ayuda() { return View(); }
      
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(tbl_usuarios user)
+        {
+            if(ModelState.IsValid)
+            {
+               
+                using(vsystem_askiEntities db = new vsystem_askiEntities())
+                {
+                    var v = db.tbl_usuarios.Where(x => x.email.Equals(user.email) && x.password.Equals(user.password)).FirstOrDefault();
+                    if(v!=null)
+                    {
+                        Session["User"] = v.primer_nombre.ToString() + " " + v.primer_apellido.ToString();
+                        return RedirectToAction("AfterLogin");
 
-        //[HttpPost]
-        //public ActionResult Administracion(DepartamentoModel model)
-        //{
+                    }
+                }
+            }
+            return View(user);
+        }
 
-        //    Service1Client client = new Service1Client();
-        //    client.addDepartamentos(model.descripcion);
-        //    client.Close();
-        //    return View();
-        //}
-               //
+        public ActionResult AfterLogin()
+        {
+            if(Session["User"]!=null)
+            {
+                return RedirectToAction("Calendario");
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+       
     }
 }
