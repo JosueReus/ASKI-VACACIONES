@@ -16,7 +16,7 @@ namespace ASKI_VACACIONES.Controllers
             if (Session["User"] != null)
                 return View();
             else
-                return View("Login");
+                return RedirectToAction("Login");
         }
         [HttpPost]
         public ActionResult Index(DepartamentoModel model)
@@ -33,7 +33,7 @@ namespace ASKI_VACACIONES.Controllers
             }
             else
             {
-                return View("Login");
+                return RedirectToAction("Login");
             }
         }
         public ActionResult Edit()
@@ -41,14 +41,14 @@ namespace ASKI_VACACIONES.Controllers
             if (Session["User"] != null)
                 return View();
             else
-                return View("Login");
+                return RedirectToAction("Login");
         }
         public ActionResult Delete()
         {
             if (Session["User"] != null)
                 return View();
             else
-                return View("Login");
+                return RedirectToAction("Login");
         }
     }
 }

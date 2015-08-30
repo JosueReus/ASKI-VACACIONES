@@ -16,7 +16,7 @@ namespace ASKI_VACACIONES.Controllers
             if (Session["User"] != null)
                 return View();
             else
-                return View("Login");
+                return RedirectToAction("Login");
         }
 
         [HttpPost]
@@ -35,7 +35,7 @@ namespace ASKI_VACACIONES.Controllers
             }
             else
             {
-                return View("Login");
+                return RedirectToAction("Login");
             }
         }
 
@@ -44,14 +44,14 @@ namespace ASKI_VACACIONES.Controllers
             if (Session["User"] != null)
                 return View();
             else
-                return View("Login");
+                return RedirectToAction("Login");
         }
         public ActionResult Delete()
         {
             if (Session["User"] != null)
                 return View();
             else
-                return View("Login");
+                return RedirectToAction("Login");
         }
     }
 }
