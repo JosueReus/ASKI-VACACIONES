@@ -171,8 +171,12 @@
                             <div class="pull-left">
                                 <a href="#" class="btn btn-default btn-flat">Perfil</a>
                             </div>
-                            <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Salir</a>
+                             <div class="pull-right">
+                                 @using (Html.BeginForm("Logout", "Home", FormMethod.Post))
+                                 {
+                                    <button type="submit" name="go" class="btn btn-default btn-flat">Salir</button>
+                              <!--  <a href="#" class="btn btn-default btn-flat">Salir</a>-->
+                                 }
                             </div>
                         </li>
                     </ul>

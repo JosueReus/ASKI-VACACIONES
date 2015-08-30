@@ -34,7 +34,7 @@
                 <img src="~/Login/images/logo_u.png" alt="" class="img-responsive" />
                 <div class="form-group">
                     <!--<input type="email" name="email" required class="form-control" placeholder="Correo Electronico" />-->
-                    <p>@Html.TextBoxFor(x => x.email, new { @class="form-control", placeholder="email@servidor.com" })</p>
+                    <p>@Html.TextBoxFor(x => x.email, new { @class="form-control", placeholder="usuario@unitec.edu" })</p>
                     <p>@Html.ValidationMessageFor(x=>x.email)</p>
                 </div>
 
@@ -46,8 +46,10 @@
                         <button class="btn btn-default" type="button" id="tooltip" data-toggle="tooltip" data-placement="top" title="Forgot password ?">?</button>
                     </span>
                 </div>
-
-                <button type="submit" name="go" class="btn btn-primary btn-block">Iniciar Sesion</button>
+    <div>
+        <br />
+        <p> <button type="submit" name="go" class="btn btn-primary btn-block">Iniciar Sesion</button></p>
+    </div>
             }
                  <!-- </form>-->
         </section>

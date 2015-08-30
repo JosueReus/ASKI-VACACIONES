@@ -13,25 +13,44 @@ namespace ASKI_VACACIONES.Controllers
         // GET: Roles
         public ActionResult Index()
         {
-            return View();
+            if (Session["User"] != null)
+                return View();
+            else
+                return View("Login");
         }
         public ActionResult Edit()
         {
-            return View();
+            if (Session["User"] != null)
+                return View();
+            else
+                return View("Login");
         }
 
         [HttpPost]
         public ActionResult Index(RolesModel model)
         {
+            if (Session["User"] != null)
+            {
+                if (ModelState.IsValid)
+                {
             Service1Client client = new Service1Client();
             client.addRoles(model.descripcion);
             client.Close();
-            return View();
+             }
+                return View();
+            }
+            else
+            {
+                return View("Login");
+            }
         }
 
         public ActionResult Delete()
         {
-            return View();
+            if (Session["User"] != null)
+                return View();
+            else
+                return View("Login");
         }
 
     }

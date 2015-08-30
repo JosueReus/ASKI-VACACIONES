@@ -31,7 +31,7 @@ namespace Service_Asky
         void addPermisos(string descripcion);
 
         [OperationContract]
-        vsystem_askiEntities getDb();
+        bool confirmarLogin(string email, string password);
 
     }
 

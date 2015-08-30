@@ -12,8 +12,20 @@ namespace ASKI_VACACIONES.Controllers
     {
         // GET: Home
         public ActionResult Login(){return View();}
-        public ViewResult Calendario() { return View(); }
-        public ViewResult Ayuda() { return View(); }
+        public ViewResult Calendario() 
+        { 
+            if(Session["User"]!=null)
+            return View(); 
+            else 
+           return View("Login");
+        }
+        public ViewResult Ayuda() 
+        {
+            if (Session["User"] != null)
+                return View();
+            else
+                return View("Login");
+        }
      
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -21,19 +33,16 @@ namespace ASKI_VACACIONES.Controllers
         {
             if(ModelState.IsValid)
             {
-               
-                using(vsystem_askiEntities db = new vsystem_askiEntities())
-                {
-                    var v = db.tbl_usuarios.Where(x => x.email.Equals(user.email) && x.password.Equals(user.password)).FirstOrDefault();
-                    if(v!=null)
+                Service1Client client = new Service1Client();
+                bool aceder = client.confirmarLogin(user.email, user.password);
+                if(aceder)
                     {
-                        Session["User"] = v.primer_nombre.ToString() + " " + v.primer_apellido.ToString();
+                        Session["User"] = user.email;
                         return RedirectToAction("AfterLogin");
-
                     }
-                }
+                
             }
-            return View(user);
+            return View("Login");
         }
 
         public ActionResult AfterLogin()
@@ -44,8 +53,16 @@ namespace ASKI_VACACIONES.Controllers
             }
             else
             {
-                return RedirectToAction("Login");
+                return View("Login");
             }
+        }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            Session["User"] = null;
+            Session.Abandon();
+            return View("Login");
         }
        
     }

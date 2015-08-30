@@ -5,7 +5,6 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/Service_Asky" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Data.Entity" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetData_InputMessage">
@@ -44,11 +43,11 @@
   <wsdl:message name="IService1_addPermisos_OutputMessage">
     <wsdl:part name="parameters" element="tns:addPermisosResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_getDb_InputMessage">
-    <wsdl:part name="parameters" element="tns:getDb" />
+  <wsdl:message name="IService1_confirmarLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:confirmarLogin" />
   </wsdl:message>
-  <wsdl:message name="IService1_getDb_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getDbResponse" />
+  <wsdl:message name="IService1_confirmarLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:confirmarLoginResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
@@ -75,9 +74,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addPermisos" message="tns:IService1_addPermisos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addPermisosResponse" message="tns:IService1_addPermisos_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getDb">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getDb" message="tns:IService1_getDb_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getDbResponse" message="tns:IService1_getDb_OutputMessage" />
+    <wsdl:operation name="confirmarLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/confirmarLogin" message="tns:IService1_confirmarLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/confirmarLoginResponse" message="tns:IService1_confirmarLogin_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -136,8 +135,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getDb">
-      <soap:operation soapAction="http://tempuri.org/IService1/getDb" style="document" />
+    <wsdl:operation name="confirmarLogin">
+      <soap:operation soapAction="http://tempuri.org/IService1/confirmarLogin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -65,10 +65,16 @@ namespace Service_Asky
 
         }
 
-        public vsystem_askiEntities getDb()
+        public bool confirmarLogin(string email, string password)
         {
             vsystem_askiEntities db = new vsystem_askiEntities();
-            return db;
+            var v = db.tbl_usuarios.Where(x => x.email.Equals(email) && x.password.Equals(password)).FirstOrDefault();
+            if (v != null)
+            {
+                return true;
+
+            }
+            return false;
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
