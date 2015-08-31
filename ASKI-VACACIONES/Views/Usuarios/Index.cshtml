@@ -1,11 +1,11 @@
 ﻿@model ASKI_VACACIONES.Models.UsuariosModel
 
 
-<link href="~/Template/Validacion/bootstrap.css" rel="stylesheet" />
+@*<link href="~/Template/Validacion/bootstrap.css" rel="stylesheet" />
 <link href="~/Template/Validacion/style.css" rel="stylesheet" />
 <script src="~/Template/Validacion/jquery-1.9.1.min.js"></script>
 <script src="~/Template/Validacion/jquery.validate.js"></script>
-<script src="~/Template/Validacion/formulario.js"></script>
+<script src="~/Template/Validacion/formulario.js"></script>*@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 <!--Enteros-->
 <script type="text/javascript">
@@ -23,12 +23,12 @@
 <script type="text/javascript">
 
     function Generarpasword() {
-        var Segundonombre = document.getElementById("segundonombre").value; // obteniendo segundo nombre por el id
-        var talento = document.getElementById("talentohumano").value; // obteniendo el numero de talento humano por el id
-        var longi = talento.length; // obteniendo longitud del numero de talento humano
-        var longi2 = longi - 2; // le resto menos 2 para poder cortar y obtener los dos ultimos digitos
-        var cortar_cadena = talento.slice(longi2, longi); // obtengo los dos ultimos digitos del talento humano
-        var concatenar = Segundonombre.concat(cortar_cadena);  // uniendo segundo nombre con los dos ultimos digitos
+        var Segundonombre = document.getElementById("segundonombre").value; 
+        var talento = document.getElementById("talentohumano").value; 
+        var longi = talento.length; 
+        var longi2 = longi - 2; 
+        var cortar_cadena = talento.slice(longi2, longi); 
+        var concatenar = Segundonombre.concat(cortar_cadena);  
 
         document.getElementById("pass").value = concatenar;
         alert("listo");
@@ -115,12 +115,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputpass" class="col-sm-2 control-label">Contraseña</label>
+                                                    <label for="inputpass" class="col-sm-2 control-label"></label>
                                                     <div class="col-sm-10">
-                                                        <p>@Html.TextBoxFor(x => x.password, new { @class = "form-control", type = "hidden" , name ="pass", id="pass"})</p>
+                                                        <p>@Html.TextBoxFor(x => x.password, new { @class = "form-control", type = "text" , name ="pass", id="pass"})</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                    <br />
                                                     <label for="inputfecha" class="col-sm-2 control-label">Fecha ingreso</label>
                                                     <div class="col-sm-10">
                                                         <p>@Html.TextBoxFor(x => x.fecha_ingreso, new { @class = "form-control", type = "date" })</p>
@@ -194,7 +195,8 @@
 
                                                 <div class="box-footer">
 
-                                                    <button type="submit" class="btn btn-info pull-right" onclick="Generarpasword()">Agregar</button>
+                                                    @*<button type="submit" class="btn btn-info pull-right" onclick="javascript:Generarpasword()">Agregar</button>*@
+                                                    <input type="submit" class="btn btn-info pull-right" onclick="Generarpasword()"/>Agregar
                                                 </div><!-- /.box-footer -->
 
                                             </div>
