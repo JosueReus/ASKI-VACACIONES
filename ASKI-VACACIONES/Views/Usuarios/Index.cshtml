@@ -7,6 +7,7 @@
 <script src="~/Template/Validacion/jquery.validate.js"></script>
 <script src="~/Template/Validacion/formulario.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<!--Enteros-->
 <script type="text/javascript">
     $(document).ready(function () {
         $('.NumberInteger').keypress(function (event) {
@@ -17,6 +18,23 @@
         });
     });
 
+</script>
+<!--Password-->
+<script type="text/javascript">
+
+    function Generarpasword() {
+        var Segundonombre = document.getElementById("segundonombre").value; // obteniendo segundo nombre por el id
+        var talento = document.getElementById("talentohumano").value; // obteniendo el numero de talento humano por el id
+        var longi = talento.length; // obteniendo longitud del numero de talento humano
+        var longi2 = longi - 2; // le resto menos 2 para poder cortar y obtener los dos ultimos digitos
+        var cortar_cadena = talento.slice(longi2, longi); // obtengo los dos ultimos digitos del talento humano
+        var concatenar = Segundonombre.concat(cortar_cadena);  // uniendo segundo nombre con los dos ultimos digitos
+
+        document.getElementById("pass").value = concatenar;
+        alert("listo");
+
+
+    }
 </script>
 <section class="content-header">
     <h1>
@@ -62,7 +80,7 @@
                                                 <div class="form-group">
                                                     <label for="inputtalentohumano" class="col-sm-2 control-label">Talento humano</label>
                                                     <div class="col-sm-10">
-                                                        <p>@Html.TextBoxFor(x => x.talento_humano, new { @class = "NumberInteger", type = "text", name = "talentohumano" })</p>
+                                                        <p>@Html.TextBoxFor(x => x.talento_humano, new { @class = "NumberInteger", type = "text", name = "talentohumano", id = "talentohumano" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -81,7 +99,7 @@
                                                 <div class="form-group">
                                                     <label for="inputprimerapellido" class="col-sm-2 control-label">Primer apellido</label>
                                                     <div class="col-sm-10">
-                                                        <p>@Html.TextBoxFor(x => x.primer_apellido, new { @class = "form-control", type = "text" })</p>
+                                                        <p>@Html.TextBoxFor(x => x.primer_apellido, new { @class = "form-control", type = "text", name = "segundonombre", id = "segundonombrev" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -99,7 +117,7 @@
                                                 <div class="form-group">
                                                     <label for="inputpass" class="col-sm-2 control-label">Contraseña</label>
                                                     <div class="col-sm-10">
-                                                        <p>@Html.TextBoxFor(x => x.password, new { @class = "form-control", type = "password" })</p>
+                                                        <p>@Html.TextBoxFor(x => x.password, new { @class = "form-control", type = "hidden" , name ="pass", id="pass"})</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -176,7 +194,7 @@
 
                                                 <div class="box-footer">
 
-                                                    <button type="submit" class="btn btn-info pull-right">Agregar</button>
+                                                    <button type="submit" class="btn btn-info pull-right" onclick="Generarpasword()">Agregar</button>
                                                 </div><!-- /.box-footer -->
 
                                             </div>
