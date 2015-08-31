@@ -39,6 +39,13 @@ namespace ASKI_VACACIONES.Controllers
             }
         }
 
+        public ActionResult Edit()
+        {
+            if (Session["User"] != null)
+                return View();
+            else
+                return RedirectToAction("Login");
+        }
         [HttpPost]
         public ActionResult Edit(PermisosModel model)
         {

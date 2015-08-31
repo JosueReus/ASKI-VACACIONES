@@ -72,11 +72,10 @@ namespace Service_Asky
                        where p.permisosid == id
                        select p)
                        .FirstOrDefault();
+            
             if (dic != null)
             {
-                
-                    dic.activo = Test;
-                
+                dic.activo = Test;
                 dic.descripcion = descripcion;
                 db.SaveChanges();
             }
