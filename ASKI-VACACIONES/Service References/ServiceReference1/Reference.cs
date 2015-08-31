@@ -114,6 +114,12 @@ namespace ASKI_VACACIONES.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addPermisos", ReplyAction="http://tempuri.org/IService1/addPermisosResponse")]
         System.Threading.Tasks.Task addPermisosAsync(string descripcion);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editPermisos", ReplyAction="http://tempuri.org/IService1/editPermisosResponse")]
+        void editPermisos(int id, string descripcion, bool Test);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editPermisos", ReplyAction="http://tempuri.org/IService1/editPermisosResponse")]
+        System.Threading.Tasks.Task editPermisosAsync(int id, string descripcion, bool Test);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/confirmarLogin", ReplyAction="http://tempuri.org/IService1/confirmarLoginResponse")]
         bool confirmarLogin(string email, string password);
         
@@ -194,6 +200,14 @@ namespace ASKI_VACACIONES.ServiceReference1 {
         
         public System.Threading.Tasks.Task addPermisosAsync(string descripcion) {
             return base.Channel.addPermisosAsync(descripcion);
+        }
+        
+        public void editPermisos(int id, string descripcion, bool Test) {
+            base.Channel.editPermisos(id, descripcion, Test);
+        }
+        
+        public System.Threading.Tasks.Task editPermisosAsync(int id, string descripcion, bool Test) {
+            return base.Channel.editPermisosAsync(id, descripcion, Test);
         }
         
         public bool confirmarLogin(string email, string password) {

@@ -43,6 +43,12 @@
   <wsdl:message name="IService1_addPermisos_OutputMessage">
     <wsdl:part name="parameters" element="tns:addPermisosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_editPermisos_InputMessage">
+    <wsdl:part name="parameters" element="tns:editPermisos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editPermisos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editPermisosResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_confirmarLogin_InputMessage">
     <wsdl:part name="parameters" element="tns:confirmarLogin" />
   </wsdl:message>
@@ -73,6 +79,10 @@
     <wsdl:operation name="addPermisos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addPermisos" message="tns:IService1_addPermisos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addPermisosResponse" message="tns:IService1_addPermisos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editPermisos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/editPermisos" message="tns:IService1_editPermisos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/editPermisosResponse" message="tns:IService1_editPermisos_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="confirmarLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/confirmarLogin" message="tns:IService1_confirmarLogin_InputMessage" />
@@ -128,6 +138,15 @@
     </wsdl:operation>
     <wsdl:operation name="addPermisos">
       <soap:operation soapAction="http://tempuri.org/IService1/addPermisos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editPermisos">
+      <soap:operation soapAction="http://tempuri.org/IService1/editPermisos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -65,6 +65,23 @@ namespace Service_Asky
 
         }
 
+        public void editPermisos(int id, string descripcion, bool Test)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            var dic = (from p in db.tbl_permisos
+                       where p.permisosid == id
+                       select p)
+                       .FirstOrDefault();
+            if (dic != null)
+            {
+                
+                    dic.activo = Test;
+                
+                dic.descripcion = descripcion;
+                db.SaveChanges();
+            }
+        }
+
         public bool confirmarLogin(string email, string password)
         {
             vsystem_askiEntities db = new vsystem_askiEntities();

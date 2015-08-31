@@ -31,6 +31,9 @@ namespace Service_Asky
         void addPermisos(string descripcion);
 
         [OperationContract]
+        void editPermisos(int id, string descripcion, bool Test);
+
+        [OperationContract]
         bool confirmarLogin(string email, string password);
 
     }
