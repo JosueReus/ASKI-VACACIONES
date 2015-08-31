@@ -17,6 +17,7 @@ namespace ASKI_VACACIONES
     {
         public vsystem_askiEntities()
             : base("name=vsystem_askiEntities")
+      
         {
         }
     

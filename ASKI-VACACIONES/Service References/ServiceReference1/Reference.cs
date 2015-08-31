@@ -102,19 +102,23 @@ namespace ASKI_VACACIONES.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addRoles", ReplyAction="http://tempuri.org/IService1/addRolesResponse")]
         System.Threading.Tasks.Task addRolesAsync(string descripcion);
         
-
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addUsuario", ReplyAction="http://tempuri.org/IService1/addUsuarioResponse")]
         void addUsuario(int talento_humano, string email, string primer_nombre, string segundo_nombre, string primer_apellido, string segundo_apellido, System.DateTime fecha_ingreso, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addUsuario", ReplyAction="http://tempuri.org/IService1/addUsuarioResponse")]
         System.Threading.Tasks.Task addUsuarioAsync(int talento_humano, string email, string primer_nombre, string segundo_nombre, string primer_apellido, string segundo_apellido, System.DateTime fecha_ingreso, string password);
-
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addPermisos", ReplyAction="http://tempuri.org/IService1/addPermisosResponse")]
         void addPermisos(string descripcion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addPermisos", ReplyAction="http://tempuri.org/IService1/addPermisosResponse")]
         System.Threading.Tasks.Task addPermisosAsync(string descripcion);
-
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/confirmarLogin", ReplyAction="http://tempuri.org/IService1/confirmarLoginResponse")]
+        bool confirmarLogin(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/confirmarLogin", ReplyAction="http://tempuri.org/IService1/confirmarLoginResponse")]
+        System.Threading.Tasks.Task<bool> confirmarLoginAsync(string email, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -176,22 +180,28 @@ namespace ASKI_VACACIONES.ServiceReference1 {
             return base.Channel.addRolesAsync(descripcion);
         }
         
-
         public void addUsuario(int talento_humano, string email, string primer_nombre, string segundo_nombre, string primer_apellido, string segundo_apellido, System.DateTime fecha_ingreso, string password) {
             base.Channel.addUsuario(talento_humano, email, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_ingreso, password);
         }
-
-        public System.Threading.Tasks.Task addUsuarioAsync(int talento_humano, string email, string primer_nombre, string segundo_nombre, string primer_apellido, string segundo_apellido, System.DateTime fecha_ingreso, string password)
-        {
+        
+        public System.Threading.Tasks.Task addUsuarioAsync(int talento_humano, string email, string primer_nombre, string segundo_nombre, string primer_apellido, string segundo_apellido, System.DateTime fecha_ingreso, string password) {
             return base.Channel.addUsuarioAsync(talento_humano, email, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_ingreso, password);
         }
+        
         public void addPermisos(string descripcion) {
             base.Channel.addPermisos(descripcion);
         }
         
         public System.Threading.Tasks.Task addPermisosAsync(string descripcion) {
             return base.Channel.addPermisosAsync(descripcion);
-
+        }
+        
+        public bool confirmarLogin(string email, string password) {
+            return base.Channel.confirmarLogin(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> confirmarLoginAsync(string email, string password) {
+            return base.Channel.confirmarLoginAsync(email, password);
         }
     }
 }

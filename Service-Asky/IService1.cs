@@ -30,6 +30,9 @@ namespace Service_Asky
         [OperationContract]
         void addPermisos(string descripcion);
 
+        [OperationContract]
+        bool confirmarLogin(string email, string password);
+
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

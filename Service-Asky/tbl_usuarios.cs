@@ -11,7 +11,8 @@ namespace Service_Asky
 {
     using System;
     using System.Collections.Generic;
-    
+
+
     public partial class tbl_usuarios
     {
         public tbl_usuarios()
@@ -27,7 +28,8 @@ namespace Service_Asky
         }
     
         public int talento_humano { get; set; }
-        public string email { get; set; }
+
+       public string email { get; set; }
         public string primer_nombre { get; set; }
         public string segundo_nombre { get; set; }
         public string primer_apellido { get; set; }
