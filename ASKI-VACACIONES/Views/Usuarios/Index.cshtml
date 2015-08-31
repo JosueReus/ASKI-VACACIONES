@@ -1,6 +1,11 @@
 ﻿@model ASKI_VACACIONES.Models.UsuariosModel
 
 
+<link href="~/Template/Validacion/bootstrap.css" rel="stylesheet" />
+<link href="~/Template/Validacion/style.css" rel="stylesheet" />
+<script src="~/Template/Validacion/jquery-1.9.1.min.js"></script>
+<script src="~/Template/Validacion/jquery.validate.js"></script>
+<script src="~/Template/Validacion/formulario.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -32,15 +37,15 @@
             <div class="panel panel-default">
                 @using (Html.BeginForm())
                 {
-                     @Html.ValidationSummary(true)
+                     @Html.ValidationSummary()
                     <div class="panel-body">
                         <div class="box box-primary">
                             <div class="box-header with-border">
                                 <h3 class="box-title"></h3>
                             </div><!-- /.box-header -->
                             <!-- form start -->
-                            <form class="form-horizontal">
-                                
+                            <form class="form-horizontal" id="formulario">
+
                                 <div class="cd-tabs">
                                     <nav>
                                         <ul class="cd-tabs-navigation">
@@ -49,7 +54,7 @@
                                             <li><a data-content="tash" href="~/Usuarios/Delete">Eliminar</a></li>
                                         </ul> <!-- cd-tabs-navigation -->
                                     </nav>
-                                    
+
                                     <ul class="cd-tabs-content">
                                         <li data-content="inbox" class="selected">
                                             <div class="box-body">
@@ -57,14 +62,14 @@
                                                 <div class="form-group">
                                                     <label for="inputtalentohumano" class="col-sm-2 control-label">Talento humano</label>
                                                     <div class="col-sm-10">
-                                                        <p>@Html.TextBoxFor(x => x.talento_humano, new { @class = "NumberInteger", type = "text" })</p>
+                                                        <p>@Html.TextBoxFor(x => x.talento_humano, new { @class = "NumberInteger", type = "text", name = "talentohumano" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="inputprimernombre" class="col-sm-2 control-label">Primer nombre</label>
                                                     <div class="col-sm-10">
                                                         <p>@Html.TextBoxFor(x => x.primer_nombre, new { @class = "form-control", type = "text" })</p>
-                                                        
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -88,19 +93,13 @@
                                                 <div class="form-group">
                                                     <label for="inputcorreo" class="col-sm-2 control-label">Correo</label>
                                                     <div class="col-sm-10">
-                                                        <p>@Html.TextBoxFor(x => x.email, new { @class = "form-control", type = "text" })</p>
+                                                        <p>@Html.TextBoxFor(x => x.email, new { @class = "form-control", type = "text", name = "email" })</p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="inputpass" class="col-sm-2 control-label">Contraseña</label>
                                                     <div class="col-sm-10">
                                                         <p>@Html.TextBoxFor(x => x.password, new { @class = "form-control", type = "password" })</p>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputcpass" class="col-sm-2 control-label">Confirmar contraseña</label>
-                                                    <div class="col-sm-10">
-                                                        <p><input type="password" class="form-control" id="inputcpass" size="20"></p>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -113,33 +112,33 @@
                                                     <label for="inputdepto" class="col-sm-2 control-label">Departamento</label>
                                                     <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
                                                     <div id="content" style="display: none;">
-                                                        
+
                                                         <div class="box">
                                                             <div class="box-header">
                                                                 <h3 class="box-title"></h3>
                                                             </div><!-- /.box-header -->
                                                             <div class="box-body">
                                                                 <table id="example1" class="table table-bordered table-striped">
-                                                                   
+
                                                                     <thead>
                                                                         <tr>
                                                                             <th>Seleccionar</th>
                                                                             <th>Departamentos</th>
-                                                                            
+
                                                                         </tr>
                                                                     </thead>
-                                                                    
+
                                                                     <tfoot>
                                                                         <tr>
                                                                             <th><input type="checkbox"></th>
                                                                             <th></th>
-                                                                            
+
                                                                         </tr>
                                                                     </tfoot>
                                                                 </table>
                                                             </div><!-- /.box-body -->
                                                         </div><!-- /.box -->
-                                                        
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -174,15 +173,15 @@
 
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="box-footer">
 
                                                     <button type="submit" class="btn btn-info pull-right">Agregar</button>
                                                 </div><!-- /.box-footer -->
-                                             
+
                                             </div>
                                         </li>
-                                       
+
                                     </ul> <!-- cd-tabs-content -->
                                 </div> <!-- cd-tabs -->
                             </form>
