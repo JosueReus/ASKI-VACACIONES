@@ -12,19 +12,58 @@ namespace ASKI_VACACIONES.Controllers
     {
         // GET: Home
         public ActionResult Login(){return View();}
-        public ViewResult Calendario() { return View(); }
-        public ViewResult Ayuda() { return View(); }
+        public ViewResult Calendario() 
+        { 
+            if(Session["User"]!=null)
+            return View(); 
+            else 
+           return View("Login");
+        }
+        public ViewResult Ayuda() 
+        {
+            if (Session["User"] != null)
+                return View();
+            else
+                return View("Login");
+        }
      
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(tbl_usuarios user)
+        {
+            if(ModelState.IsValid)
+            {
+                Service1Client client = new Service1Client();
+                bool aceder = client.confirmarLogin(user.email, user.password);
+                if(aceder)
+                    {
+                        Session["User"] = user.email;
+                        return RedirectToAction("AfterLogin");
+                    }
+                
+            }
+            return View("Login");
+        }
 
-        //[HttpPost]
-        //public ActionResult Administracion(DepartamentoModel model)
-        //{
+        public ActionResult AfterLogin()
+        {
+            if(Session["User"]!=null)
+            {
+                return RedirectToAction("Calendario");
+            }
+            else
+            {
+                return View("Login");
+            }
+        }
 
-        //    Service1Client client = new Service1Client();
-        //    client.addDepartamentos(model.descripcion);
-        //    client.Close();
-        //    return View();
-        //}
-               //
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            Session["User"] = null;
+            Session.Abandon();
+            return View("Login");
+        }
+       
     }
 }

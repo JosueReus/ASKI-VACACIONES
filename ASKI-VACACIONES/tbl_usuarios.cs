@@ -11,6 +11,7 @@ namespace ASKI_VACACIONES
 {
     using System;
     using System.Collections.Generic;
+
     
     public partial class tbl_usuarios
     {
@@ -27,6 +28,8 @@ namespace ASKI_VACACIONES
         }
     
         public int talento_humano { get; set; }
+
+     
         public string email { get; set; }
         public string primer_nombre { get; set; }
         public string segundo_nombre { get; set; }
@@ -34,6 +37,8 @@ namespace ASKI_VACACIONES
         public string segundo_apellido { get; set; }
         public System.DateTime fecha_ingreso { get; set; }
         public System.DateTime fecha_creacion { get; set; }
+        
+        
         public string password { get; set; }
         public bool activo { get; set; }
     

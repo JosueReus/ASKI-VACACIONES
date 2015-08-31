@@ -13,23 +13,42 @@ namespace ASKI_VACACIONES.Controllers
         // GET: Usuarios
         public ActionResult Index()
         {
-            return View();
+            if (Session["User"] != null)
+                return View();
+            else
+                return RedirectToAction("Login");
         }
         [HttpPost]
         public ActionResult Index(UsuariosModel model)
         {
+            if (Session["User"] != null)
+            {
+                if (ModelState.IsValid)
+                {
             Service1Client client = new Service1Client();
             client.addUsuario(model.talento_humano, model.email, model.primer_nombre,model.segundo_nombre,model.primer_apellido,model.segundo_apellido,model.fecha_ingreso,model.password);
             client.Close();
-            return View();
+                }
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
         public ActionResult Edit()
         {
-            return View();
+            if (Session["User"] != null)
+                return View();
+            else
+                return RedirectToAction("Login");
         }
         public ActionResult Delete()
         {
-            return View();
+            if (Session["User"] != null)
+                return View();
+            else
+                return RedirectToAction("Login");
         }
     }
 }
