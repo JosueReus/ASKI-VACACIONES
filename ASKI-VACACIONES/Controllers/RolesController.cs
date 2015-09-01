@@ -18,6 +18,38 @@ namespace ASKI_VACACIONES.Controllers
             else
                 return RedirectToAction("Login");
         }
+
+        [HttpPost]
+        public ActionResult Edit(RolesModel model, string submitButton)
+        {
+            Service1Client client = new Service1Client();
+            switch (submitButton)
+            {
+                case "Buscar":
+                    string hola = client.getRolesInfo(model.id);
+                    ViewBag.Desc = hola;
+                    ViewBag.id = model.id;
+                    client.Close();
+                    return View();
+                case "Modificar":
+                    if (Session["User"] != null)
+                    {
+                        // var dic = client.getPermisosInfo(model.id);
+                        //Session["Name"] = dic.descripcion;
+                        client.editRoles(model.id, model.descripcion);
+                        client.Close();
+                    }
+                    return View();
+                default:
+                    // If they've submitted the form without a submitButton, 
+                    // just return the view again.
+                    return RedirectToAction("Login");
+            }
+
+
+
+        }
+
         public ActionResult Edit()
         {
             if (Session["User"] != null)

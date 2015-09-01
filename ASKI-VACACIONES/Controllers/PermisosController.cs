@@ -8,6 +8,8 @@ using System.Web.Mvc;
 
 namespace ASKI_VACACIONES.Controllers
 {
+
+    
     public class PermisosController : Controller
     {
         // GET: Permisos
@@ -46,18 +48,44 @@ namespace ASKI_VACACIONES.Controllers
             else
                 return RedirectToAction("Login");
         }
+
         [HttpPost]
-        public ActionResult Edit(PermisosModel model)
+        public ActionResult Edit(PermisosModel model, string submitButton)
         {
-            if (Session["User"] != null)
+            Service1Client client = new Service1Client();
+            switch (submitButton)
             {
-                Service1Client client = new Service1Client();
-                client.editPermisos(model.id, model.descripcion, model.activo);
-                client.Close();
-                return View();
+            case "Buscar":
+            string hola= client.getPermisosInfo(model.id);
+            ViewBag.Desc = hola;
+            client.Close();
+            return View();     
+                case "Modificar":
+                    if (Session["User"] != null)
+                    {
+                        // var dic = client.getPermisosInfo(model.id);
+                        //Session["Name"] = dic.descripcion;
+                        client.editPermisos(model.id, model.descripcion, model.activo);
+                        client.Close();
+                    }
+                    return View();
+                default:
+                    // If they've submitted the form without a submitButton, 
+                    // just return the view again.
+                    return RedirectToAction("Login");
             }
-            else
-                return RedirectToAction("Login");
+
+            
+           
+        }
+
+        [HttpPost]
+        public ActionResult Delete(PermisosModel model)
+        {
+            Service1Client client = new Service1Client();
+            client.deletePermisos(model.id);
+            client.Close();
+            return View();
         }
         public ActionResult Delete()
         {
@@ -65,6 +93,16 @@ namespace ASKI_VACACIONES.Controllers
                 return View();
             else
                 return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public ActionResult Cargar(PermisosModel model)
+        {
+            Service1Client client = new Service1Client();
+            string dic = client.getPermisosInfo(model.id);
+            
+            client.Close();
+            return View(dic);
         }
     }
 }

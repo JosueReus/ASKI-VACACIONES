@@ -7,6 +7,22 @@ using System.Text;
 
 namespace Service_Asky
 {
+
+    public class User
+    {
+        int talentoHumano;
+        string primerNombre;
+        string segundoNombre;
+        string primerApellido;
+        string segundoApellido;
+        DateTime fechaIngreso;
+        DateTime fechaCreacion;
+        string password;
+        bool activo;
+        public User(int talentoHumano, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, DateTime fechaIngreso, DateTime fechaCreacion, string password, bool activo);
+
+    }
+
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface IService1
@@ -32,9 +48,26 @@ namespace Service_Asky
 
         [OperationContract]
         void editPermisos(int id, string descripcion, bool Test);
+        [OperationContract]
+        void editRoles(int id, string descripcion);
+        [OperationContract]
+        void editDepartamentos(int id, string descripcion);
+
+        [OperationContract]
+        void deletePermisos(int id);
 
         [OperationContract]
         bool confirmarLogin(string email, string password);
+
+        [OperationContract]
+        string getPermisosInfo(int id);
+        [OperationContract]
+        string getRolesInfo(int id);
+        [OperationContract]
+        User getUsuariosInfo(int id);
+        [OperationContract]
+        string getDepartamentosInfo(int id);
+
 
     }
 

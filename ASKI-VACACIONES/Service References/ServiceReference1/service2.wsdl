@@ -49,11 +49,53 @@
   <wsdl:message name="IService1_editPermisos_OutputMessage">
     <wsdl:part name="parameters" element="tns:editPermisosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_editRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:editRoles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editDepartamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:editDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editDepartamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deletePermisos_InputMessage">
+    <wsdl:part name="parameters" element="tns:deletePermisos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deletePermisos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deletePermisosResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_confirmarLogin_InputMessage">
     <wsdl:part name="parameters" element="tns:confirmarLogin" />
   </wsdl:message>
   <wsdl:message name="IService1_confirmarLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:confirmarLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPermisosInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPermisosInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPermisosInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPermisosInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRolesInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRolesInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRolesInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRolesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUsuariosInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsuariosInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUsuariosInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsuariosInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getDepartamentosInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamentosInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getDepartamentosInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDepartamentosInfoResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
@@ -84,9 +126,37 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/editPermisos" message="tns:IService1_editPermisos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/editPermisosResponse" message="tns:IService1_editPermisos_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="editRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/editRoles" message="tns:IService1_editRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/editRolesResponse" message="tns:IService1_editRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editDepartamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/editDepartamentos" message="tns:IService1_editDepartamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/editDepartamentosResponse" message="tns:IService1_editDepartamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePermisos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deletePermisos" message="tns:IService1_deletePermisos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deletePermisosResponse" message="tns:IService1_deletePermisos_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="confirmarLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/confirmarLogin" message="tns:IService1_confirmarLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/confirmarLoginResponse" message="tns:IService1_confirmarLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPermisosInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPermisosInfo" message="tns:IService1_getPermisosInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPermisosInfoResponse" message="tns:IService1_getPermisosInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRolesInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRolesInfo" message="tns:IService1_getRolesInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRolesInfoResponse" message="tns:IService1_getRolesInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsuariosInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUsuariosInfo" message="tns:IService1_getUsuariosInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUsuariosInfoResponse" message="tns:IService1_getUsuariosInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamentosInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getDepartamentosInfo" message="tns:IService1_getDepartamentosInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getDepartamentosInfoResponse" message="tns:IService1_getDepartamentosInfo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -154,8 +224,71 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="editRoles">
+      <soap:operation soapAction="http://tempuri.org/IService1/editRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/IService1/editDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePermisos">
+      <soap:operation soapAction="http://tempuri.org/IService1/deletePermisos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="confirmarLogin">
       <soap:operation soapAction="http://tempuri.org/IService1/confirmarLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPermisosInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPermisosInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRolesInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRolesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsuariosInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUsuariosInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartamentosInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/getDepartamentosInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

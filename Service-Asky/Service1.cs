@@ -10,6 +10,7 @@ namespace Service_Asky
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class Service1 : IService1
     {
+        
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -64,7 +65,20 @@ namespace Service_Asky
             db.SaveChanges();
 
         }
+        public void deletePermisos(int id)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            var dic = (from p in db.tbl_permisos
+                       where p.permisosid == id
+                       select p)
+                       .FirstOrDefault();
 
+            if (dic != null)
+            {
+                dic.activo = false;
+                db.SaveChanges();
+            }
+        }
         public void editPermisos(int id, string descripcion, bool Test)
         {
             vsystem_askiEntities db = new vsystem_askiEntities();
@@ -75,10 +89,90 @@ namespace Service_Asky
             
             if (dic != null)
             {
-                dic.activo = Test;
+               // dic.activo = Test;
                 dic.descripcion = descripcion;
                 db.SaveChanges();
             }
+        }
+
+        public void editRoles(int id, string descripcion)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            var dic = (from p in db.tbl_roles
+                       where p.rolesid == id
+                       select p)
+                       .FirstOrDefault();
+
+            if (dic != null)
+            {
+                dic.descripcion = descripcion;
+                db.SaveChanges();
+            }
+        }
+
+        public void editDepartamentos(int id, string descripcion)
+        {
+
+
+
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            var dic = (from p in db.tbl_departamento
+                       where p.departamentoid == id
+                       select p)
+                       .FirstOrDefault();
+
+            if (dic != null)
+            {
+                dic.descripcion = descripcion;
+                db.SaveChanges();
+            }
+        
+        }
+
+        public string getPermisosInfo(int id)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            var dic = (from p in db.tbl_permisos
+                       where p.permisosid == id
+                       select p)
+                       .FirstOrDefault();
+            return dic.descripcion;
+        }
+        public string getRolesInfo(int id)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            var dic = (from p in db.tbl_roles
+                       where p.rolesid == id
+                       select p)
+                       .FirstOrDefault();
+            if(dic!=null)
+            return dic.descripcion;
+
+            return "Error";
+        }
+
+        public User getUsuariosInfo(int id)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            var dic = (from p in db.tbl_usuarios
+                       where p.talento_humano == id
+                       select p)
+                       .FirstOrDefault();
+            User usuario = new User(dic.talento_humano,dic.primer_nombre,dic.segundo_nombre,dic.primer_apellido
+                ,dic.segundo_apellido,dic.fecha_ingreso,dic.fecha_creacion,dic.password,dic.activo);
+
+            return usuario;
+        }
+        
+        public string getDepartamentosInfo(int id)
+        {
+            vsystem_askiEntities db = new vsystem_askiEntities();
+            var dic = (from p in db.tbl_departamento
+                       where p.departamentoid == id
+                       select p)
+                       .FirstOrDefault();
+            return dic.descripcion;
+            
         }
 
         public bool confirmarLogin(string email, string password)

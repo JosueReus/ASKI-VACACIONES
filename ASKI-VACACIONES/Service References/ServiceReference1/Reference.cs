@@ -120,11 +120,53 @@ namespace ASKI_VACACIONES.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editPermisos", ReplyAction="http://tempuri.org/IService1/editPermisosResponse")]
         System.Threading.Tasks.Task editPermisosAsync(int id, string descripcion, bool Test);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editRoles", ReplyAction="http://tempuri.org/IService1/editRolesResponse")]
+        void editRoles(int id, string descripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editRoles", ReplyAction="http://tempuri.org/IService1/editRolesResponse")]
+        System.Threading.Tasks.Task editRolesAsync(int id, string descripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editDepartamentos", ReplyAction="http://tempuri.org/IService1/editDepartamentosResponse")]
+        void editDepartamentos(int id, string descripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editDepartamentos", ReplyAction="http://tempuri.org/IService1/editDepartamentosResponse")]
+        System.Threading.Tasks.Task editDepartamentosAsync(int id, string descripcion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deletePermisos", ReplyAction="http://tempuri.org/IService1/deletePermisosResponse")]
+        void deletePermisos(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deletePermisos", ReplyAction="http://tempuri.org/IService1/deletePermisosResponse")]
+        System.Threading.Tasks.Task deletePermisosAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/confirmarLogin", ReplyAction="http://tempuri.org/IService1/confirmarLoginResponse")]
         bool confirmarLogin(string email, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/confirmarLogin", ReplyAction="http://tempuri.org/IService1/confirmarLoginResponse")]
         System.Threading.Tasks.Task<bool> confirmarLoginAsync(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPermisosInfo", ReplyAction="http://tempuri.org/IService1/getPermisosInfoResponse")]
+        string getPermisosInfo(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPermisosInfo", ReplyAction="http://tempuri.org/IService1/getPermisosInfoResponse")]
+        System.Threading.Tasks.Task<string> getPermisosInfoAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRolesInfo", ReplyAction="http://tempuri.org/IService1/getRolesInfoResponse")]
+        string getRolesInfo(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRolesInfo", ReplyAction="http://tempuri.org/IService1/getRolesInfoResponse")]
+        System.Threading.Tasks.Task<string> getRolesInfoAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getUsuariosInfo", ReplyAction="http://tempuri.org/IService1/getUsuariosInfoResponse")]
+        string getUsuariosInfo(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getUsuariosInfo", ReplyAction="http://tempuri.org/IService1/getUsuariosInfoResponse")]
+        System.Threading.Tasks.Task<string> getUsuariosInfoAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getDepartamentosInfo", ReplyAction="http://tempuri.org/IService1/getDepartamentosInfoResponse")]
+        string getDepartamentosInfo(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getDepartamentosInfo", ReplyAction="http://tempuri.org/IService1/getDepartamentosInfoResponse")]
+        System.Threading.Tasks.Task<string> getDepartamentosInfoAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -210,12 +252,68 @@ namespace ASKI_VACACIONES.ServiceReference1 {
             return base.Channel.editPermisosAsync(id, descripcion, Test);
         }
         
+        public void editRoles(int id, string descripcion) {
+            base.Channel.editRoles(id, descripcion);
+        }
+        
+        public System.Threading.Tasks.Task editRolesAsync(int id, string descripcion) {
+            return base.Channel.editRolesAsync(id, descripcion);
+        }
+        
+        public void editDepartamentos(int id, string descripcion) {
+            base.Channel.editDepartamentos(id, descripcion);
+        }
+        
+        public System.Threading.Tasks.Task editDepartamentosAsync(int id, string descripcion) {
+            return base.Channel.editDepartamentosAsync(id, descripcion);
+        }
+        
+        public void deletePermisos(int id) {
+            base.Channel.deletePermisos(id);
+        }
+        
+        public System.Threading.Tasks.Task deletePermisosAsync(int id) {
+            return base.Channel.deletePermisosAsync(id);
+        }
+        
         public bool confirmarLogin(string email, string password) {
             return base.Channel.confirmarLogin(email, password);
         }
         
         public System.Threading.Tasks.Task<bool> confirmarLoginAsync(string email, string password) {
             return base.Channel.confirmarLoginAsync(email, password);
+        }
+        
+        public string getPermisosInfo(int id) {
+            return base.Channel.getPermisosInfo(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> getPermisosInfoAsync(int id) {
+            return base.Channel.getPermisosInfoAsync(id);
+        }
+        
+        public string getRolesInfo(int id) {
+            return base.Channel.getRolesInfo(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> getRolesInfoAsync(int id) {
+            return base.Channel.getRolesInfoAsync(id);
+        }
+        
+        public string getUsuariosInfo(int id) {
+            return base.Channel.getUsuariosInfo(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> getUsuariosInfoAsync(int id) {
+            return base.Channel.getUsuariosInfoAsync(id);
+        }
+        
+        public string getDepartamentosInfo(int id) {
+            return base.Channel.getDepartamentosInfo(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> getDepartamentosInfoAsync(int id) {
+            return base.Channel.getDepartamentosInfoAsync(id);
         }
     }
 }
