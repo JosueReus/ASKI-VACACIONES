@@ -46,6 +46,19 @@ namespace ASKI_VACACIONES.Controllers
             else
                 return RedirectToAction("Login");
         }
+        [HttpPost]
+        public ActionResult Edit(PermisosModel model)
+        {
+            if (Session["User"] != null)
+            {
+                Service1Client client = new Service1Client();
+                client.editPermisos(model.id, model.descripcion, model.activo);
+                client.Close();
+                return View();
+            }
+            else
+                return RedirectToAction("Login");
+        }
         public ActionResult Delete()
         {
             if (Session["User"] != null)
